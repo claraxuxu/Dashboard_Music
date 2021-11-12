@@ -1,0 +1,48 @@
+.topbar {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.topbarWrapper {
+    height: 100%;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-left: 10px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 29px;
+    color: black;
+}
+
+.topLeft {
+    display: flex;
+    flex-direction: row;
+}
+
+.Up {
+    background-color: white;
+    color: #F35843;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    border-color: #F35843;
+    align-items: center;
+    justify-content: center;
+}
+
+.In {
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    padding: 5px 20px;
+    border-radius: 10px;
+}

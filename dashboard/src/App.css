@@ -1,0 +1,30 @@
+.content {
+    width: 100%;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+}
+
+.Other {
+    flex: 7;
+    background-color: #E5E5E5;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.options {
+    font-size: 15px;
+}
