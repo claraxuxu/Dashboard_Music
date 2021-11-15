@@ -1,7 +1,15 @@
 import './App.css';
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import TopBar from './component/TopBar/TopBar';
 import SideBar from './component/SideBar/SideBar';
+import Spotify from './component/Spotify/Spotify';
+import Youtube from './component/Youtube/Youtube';
+import Setting from './component/Settings/Setting';
 
 // function Rows(props) {
 //     return (
@@ -17,16 +25,23 @@ import SideBar from './component/SideBar/SideBar';
 
 function App() {
   return (
-    <div className="content">
+    <Router>
         <TopBar />
         <div className="container">
             <SideBar />
-            <div className="Other">
-                otherpages
-
-            </div>
+            <Switch>
+              <Route exact path="/">
+                <Spotify />
+              </Route>
+              <Route path="/youtube">
+                <Youtube />
+              </Route>
+              <Route path="/setting">
+                <Setting />
+              </Route>
+            </Switch>
         </div>
-    </div>
+    </Router>
   );
 }
 

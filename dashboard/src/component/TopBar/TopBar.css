@@ -46,3 +46,65 @@
     padding: 5px 20px;
     border-radius: 10px;
 }
+
+.SignUP-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.loginContainer {
+    padding: 30px;
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loginContainer label {
+    color: black;
+    margin-bottom: 10px;
+    margin: 12px 0;
+    display: block;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.loginContainer input {
+    width: 80%;
+    border-radius: 10px;
+    border-color: #7D96FF;
+    outline: none;
+    font-size: 15px;
+    padding: 10px;
+    background-color: #F0F2F3;
+    letter-spacing: 1px;
+}
+
+.btnContainer {
+    margin-left: 30%;
+    margin-top: 20px;
+    width: 30%;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #7D96FF;
+    align-items: center;
+    font-size: 15px;
+}
+
+p span {
+    text-align: right;
+    color: #4A3A84;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+}
+
+p span:hover {
+    color: red;
+}  

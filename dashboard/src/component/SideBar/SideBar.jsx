@@ -1,6 +1,5 @@
 import React from 'react'
 import './SideBar.css';
-
 import spotifyIcon from './../../assets/spotify.png';
 import profileIcon from './../../assets/profile.png';
 import youtubeIcon from './../../assets/youtube.png';
@@ -32,7 +31,7 @@ export default function SideBar() {
                             <img src={require('./../../assets/discover.png').default} alt="Discovery" className="sidebarIcon" />
                             Discovery
                         </li>
-                        <li className="sidebarListItem">
+                        <li to='/' li className="sidebarListItem">
                             <img src={profileIcon} alt="Profile" className="sidebarIcon" />
                             Profile
                         </li>
