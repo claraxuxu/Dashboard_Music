@@ -1,0 +1,43 @@
+.explore-content {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: black;
+    border-style: double;
+    width: 300px;
+    background-color: white;
+    margin: 10px;
+}
+
+.beside-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.explore-inner {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.explore-title {
+    margin-right: 15px;
+}
+
+.explore_albumImg {
+    width: 110px;
+    height: 110px;
+}
+
+.minus-btn {
+    width: 20px;
+    height: 20px;
+}
+
+.play-bar {
+    align-items: flex-end;
+}
