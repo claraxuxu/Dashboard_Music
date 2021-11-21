@@ -11,13 +11,19 @@
 }
 
 .popup-inner {
+    display: flex;
+    flex-direction: row;
     position: relative;
-    padding: 30px;
-    width: 100%;
-    max-width: 640px;
+    width: 857px;
+    height: 530px;
     background-color: #fff;
 }
 
+.loginImg {
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+}
 .close-btn {
     position: absolute;
     top: 16px;

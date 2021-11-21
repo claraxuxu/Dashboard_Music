@@ -5,20 +5,42 @@ import Popup from '../Tools/Popup/Popup';
 function Sign(props) {
     return (
         <div className="loginContainer">
-            <label>Username</label>
-            <input
-                type="text"
-                value={props.name}
-                autoFocus
-                onChange={(e) => props.setName(e.target.value)}
-            ></input>
-            <label>PassWord</label>
-            <input
-                value={props.pw}
-                onChange={e => props.setPw(e.target.value)}
-            ></input>
-            <button className="btnContainer">Sign Up</button>
-            <p>Already have an account? <span>Sign In</span></p>
+            <div className="other-login">
+                <button className="other-inner">
+                    <img
+                        src={require('./../../assets/google_logo.png').default}
+                        alt="google"
+                        className="other-logo"
+                    />
+                    Sign in with Google
+                </button>
+
+                <button className="other-inner">
+                    <img
+                        src={require('./../../assets/twitter_logo.png').default}
+                        alt="twitter"
+                        className="other-logo"
+                    />
+                    Sign in with Twitter
+                </button>
+            </div>
+            <p style={{textAlign:'center', margin:0, padding:0}}>-- or --</p>
+            <div>
+                <label style={{textAlign:'left'}}>Username</label>
+                <input
+                    type="text"
+                    value={props.name}
+                    autoFocus
+                    onChange={(e) => props.setName(e.target.value)}
+                ></input>
+                <label>PassWord</label>
+                <input
+                    value={props.pw}
+                    onChange={e => props.setPw(e.target.value)}
+                ></input>
+                <button className="btnContainer">Sign Up</button>
+                <p style={{textAlign:'center'}}>Already have an account? <span>Sign In</span></p>
+            </div>
         </div>
     )
 }
