@@ -24,6 +24,7 @@
     height: 100%;
     object-fit: cover;
 }
+
 .close-btn {
     position: absolute;
     top: 16px;
@@ -31,6 +32,11 @@
     border: none;
     align-items: center;
     justify-content: center;
+    transition: all 400ms ease-in-out;
+}
+
+.close-btn:hover {
+    background-color: #CFC6EE;
 }
 
 .close-img {
