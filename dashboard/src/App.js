@@ -11,6 +11,7 @@ import Spotify from './component/Spotify/Spotify';
 import Youtube from './component/Youtube/Youtube';
 import Setting from './component/Settings/Setting';
 import Profile from './component/Profile/Profile';
+import Discovery from './component/Discovery/Discovery';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
               </Route>
               <Route path="/youtube">
                 <Youtube />
+              </Route>
+              <Route path="/discovery">
+                <Discovery />
               </Route>
               <Route path="/profile">
                 <Profile />

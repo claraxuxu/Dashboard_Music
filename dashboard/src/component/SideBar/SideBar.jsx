@@ -32,10 +32,12 @@ export default function SideBar() {
                     </ul>
                     <h3 className="sidebarTitle">Tools</h3>
                     <ul className="sidebarList">
+                        <Link to="/discovery" className="link"> 
                         <li className="sidebarListItem">
                             <img src={require('./../../assets/discover.png').default} alt="Discovery" className="sidebarIcon" />
                             Discovery
                         </li>
+                        </Link>
                         <Link to="/profile" className="link"> 
                         <li className="sidebarListItem">
                             <img src={profileIcon} alt="Profile" className="sidebarIcon" />
