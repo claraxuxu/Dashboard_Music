@@ -10,18 +10,7 @@ import SideBar from './component/SideBar/SideBar';
 import Spotify from './component/Spotify/Spotify';
 import Youtube from './component/Youtube/Youtube';
 import Setting from './component/Settings/Setting';
-
-// function Rows(props) {
-//     return (
-//         <div className="row">
-//             <img className="icon"
-//                 src={props.imgsrc}
-//                 alt={props.title}
-//             />
-//             <text className="options">{props.title}</text>
-//         </div>
-//     )
-// }
+import Profile from './component/Profile/Profile';
 
 function App() {
   return (
@@ -35,6 +24,9 @@ function App() {
               </Route>
               <Route path="/youtube">
                 <Youtube />
+              </Route>
+              <Route path="/profile">
+                <Profile />
               </Route>
               <Route path="/setting">
                 <Setting />

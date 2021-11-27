@@ -21,7 +21,6 @@ export default function Subscribe(props) {
                     onChange={e => props.setPw(e.target.value)}
                 ></input>
                 <button className="btnContainer">Sign Up</button>
-                <p style={{textAlign:'center'}}>Already have an account? <span>Sign In</span></p>
             </div>
         </div>
     )

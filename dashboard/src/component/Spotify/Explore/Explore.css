@@ -3,9 +3,9 @@
     flex-direction: row;
     padding: 5px;
     border-radius: 10px;
-    border-width: 1px;
-    border-color: black;
-    border-style: double;
+    -webkit-box-shadow: 0.3px 0.3px 11px 0px rgba(0,0,0,0.63);
+    -moz-box-shadow: 0.3px 0.3px 11px 0px rgba(0,0,0,0.63);
+    box-shadow: 0.3px 0.3px 11px 0px rgba(0,0,0,0.63);
     width: 300px;
     background-color: white;
     margin: 10px;

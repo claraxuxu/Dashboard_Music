@@ -21,7 +21,6 @@ export default function Signin(props) {
                     onChange={e => props.setPw(e.target.value)}
                 ></input>
                 <button className="btnContainer">Sign In</button>
-                <p style={{textAlign:'center'}}>Haven't account yet? <span>Sign up</span></p>
             </div>
         </div>
     )
