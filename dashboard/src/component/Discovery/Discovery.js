@@ -32,7 +32,7 @@ export default function Discovery() {
                         onChange={e => setSearch(e.target.value)}
                     />
                 </form>
-                {(searchInfo.totalhits) ? <p>Found {searchInfo.totalhits} results</p> : '0'}
+                {(searchInfo.totalhits) ? <p>Found {searchInfo.totalhits} results</p> : ''}
             </header>
             <div className="results">
                 {
