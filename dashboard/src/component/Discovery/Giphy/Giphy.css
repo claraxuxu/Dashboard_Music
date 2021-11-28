@@ -1,0 +1,30 @@
+.gi-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin-left: 5%;
+}
+
+
+.gif-result {
+    width: 100%;
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    background-color: white;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.gif-result:hover {
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.gif-imgs {
+    margin: 5px;
+    max-width: 90%;
+}
