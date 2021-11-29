@@ -14,6 +14,7 @@ class Widgets(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=256)
     params = models.ForeignKey(WidgetsParam, blank=True, on_delete=models.CASCADE)
+    clock = models.IntegerField(null=True, blank=True)
     
     def __str__(self):
         return self.name
@@ -21,9 +22,9 @@ class Widgets(models.Model):
 class UserData(models.Model):
     email = models.EmailField(max_length=256)
     password = models.CharField(max_length=30)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    username = models.CharField(max_length=50)
     created_at = models.DateTimeField()
+    phone_number = models.CharField(max_length=10)
     widgets = models.ForeignKey(to=Widgets, blank=True, on_delete=models.CASCADE)
     
     def __str__(self):
