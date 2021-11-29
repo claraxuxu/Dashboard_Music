@@ -27,3 +27,5 @@ package-lock.json
 yarn.lock
 
 __pycache__/
+clac_env/
+sqlite3.db
