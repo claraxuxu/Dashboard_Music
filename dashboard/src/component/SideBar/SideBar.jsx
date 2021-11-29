@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 import './SideBar.css';
 import spotifyIcon from './../../assets/spotify.png';
 import profileIcon from './../../assets/profile.png';
@@ -12,14 +13,18 @@ export default function SideBar() {
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Platforms</h3>
                     <ul className="sidebarList">
-                        <li className="sidebarListItem active">
+                        <Link to="/" className="link">
+                        <li className="sidebarListItem">
                             <img src={spotifyIcon} alt="spotify" className="sidebarIcon" />
                             Spotify
                         </li>
-                        <li className="sidebarListItem">
+                        </Link>
+                        <Link to="/youtube" className="link"> 
+                        <li to="/youtube" className="sidebarListItem">
                             <img src={youtubeIcon} alt="youtube" className="sidebarIcon" />
                             Youtube
                         </li>
+                        </Link>
                         <li className="sidebarListItem">
                             <img src={soundIcon} alt="soundcloud" className="sidebarIcon" />
                             SoundCloud
@@ -27,14 +32,18 @@ export default function SideBar() {
                     </ul>
                     <h3 className="sidebarTitle">Tools</h3>
                     <ul className="sidebarList">
+                        <Link to="/discovery" className="link"> 
                         <li className="sidebarListItem">
                             <img src={require('./../../assets/discover.png').default} alt="Discovery" className="sidebarIcon" />
                             Discovery
                         </li>
-                        <li to='/' li className="sidebarListItem">
+                        </Link>
+                        <Link to="/profile" className="link"> 
+                        <li className="sidebarListItem">
                             <img src={profileIcon} alt="Profile" className="sidebarIcon" />
                             Profile
                         </li>
+                        </Link>
                         <li className="sidebarListItem">
                             <img src={require('./../../assets/setting.png').default} alt="Settings" className="sidebarIcon" />
                             Settings

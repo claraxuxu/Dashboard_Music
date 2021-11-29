@@ -25,8 +25,7 @@ export default function Signin(props) {
                     value={props.pw}
                     onChange={e => props.setPw(e.target.value)}
                 ></input>
-                <button className="btnContainer" onClick={tryConnection(props.name, props.pw)}>Sign In</button>
-                <p style={{textAlign:'center'}}>Haven't account yet? <span>Sign up</span></p>
+                <button className="btnContainer">Sign In</button>
             </div>
         </div>
     )

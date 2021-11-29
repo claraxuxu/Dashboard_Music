@@ -29,7 +29,14 @@ export default function TopBar() {
                 </div>
             </div>
             <Popup trigger={btnUp} setTrigger={setBtnUp}>
-                <Subscribe name={username} setName={setUsername} pw={pwd} setPw={setPwd} />
+                <Subscribe
+                    name={username}
+                    setName={setUsername}
+                    trigger={btnIn}
+                    setTrigger={setBtnUp}
+                    setTrigger2={setBtnIn}
+                    pw={pwd}
+                    setPw={setPwd} />
             </Popup>
 
             <Popup trigger={btnIn} setTrigger={setBtnIn}>

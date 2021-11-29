@@ -3,26 +3,21 @@ import './../Spotify.css';
 import './Following.css';
 
 export default function Following() {
-	const [title, setTitle] = useState({
-		inputValue: 'hello following',
-		list: []
-	});
+	const [title, setTitle] = useState([]);
 
 	const width = window.innerWidth;
 	
-	function addExplore() {
-		setTitle({
-			list: [...title.list, title.inputValue],
-			inputValue: 'Nom artiste'
-		})
+	function addFollow(t) {
+		setTitle([...title, {
+			title: t,
+			id: title.length
+		}]
+		)
 	};
 	
-	function delExplore(index) {
-		const list_tmp = [...title.list];
-		list_tmp.splice(index, 1)
-		setTitle({
-			list: list_tmp
-		})
+	function delFollow(index) {
+		const list_tmp = title.filter((item) => item.id !== index);
+		setTitle(list_tmp)
 	};
 
 	return (
@@ -30,7 +25,7 @@ export default function Following() {
 			<div className="title-bar">
 				<h2 className="title-name">Following</h2>
 				<button className="plus-btn"
-				onClick={addExplore.bind()}>
+				onClick={() => addFollow("Nom artiste")}>
 					<img 
 						className="plus-img" 
 						src={require('./../../../assets/plus.png').default}
@@ -40,7 +35,7 @@ export default function Following() {
 			</div>
 			<div className="widget-main" style={{width: width / 6 * 5}}>
 			{
-				title.list.map((item, index) => {
+				title.map((item, index) => {
 					return (
 						<div className="following-content" key={index}>
                             <img
@@ -50,13 +45,20 @@ export default function Following() {
                             />
                             <div className="singer-img">
                                 <div className="following-inner">
-                                    <h3 className="following-title">{item}</h3>
-                                    <img
-                                        className="minus-btn"
-                                        src={require('../../../assets/minus.png').default}
-                                        alt="delete"
-                                        onClick={delExplore.bind(index)}
-                                    />
+                                    <h3 className="following-title">{item.title}{item.id}</h3>
+									<div style={{display:'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-between'}}>
+										<img
+											className="minus-btn"
+											src={require('../../../assets/play.png').default}
+											alt="play"
+										/>
+										<img
+											className="minus-btn"
+											src={require('../../../assets/minus.png').default}
+											alt="delete"
+											onClick={() => delFollow(item.id)}
+										/>
+									</div>
                                 </div>
                             </div>
 						</div>

@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 85%;
+}
+
+.wiki {
+    width: 40%;
+    max-height: 300px;
+    border-radius: 10px;
+    background-color: #F0F2F3;
+    overflow-y: auto;
+    margin-right: 15px;
+}
