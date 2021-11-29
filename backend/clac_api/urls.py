@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from api.views import about_json
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('about.json', about_json)
 ]

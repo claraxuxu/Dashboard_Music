@@ -151,12 +151,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ### CORS HANDLING
 
-CORS_ALLOW_ALL_ORIGINS = True
+ALLOWED_HOSTS=['*']
+CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:3000",
-]
 
-CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:3000'
-)
+# CORS_ALLOWED_ORIGINS = [
+#     "http://127.0.0.1:3000",
+# ]
+
+# CORS_ORIGIN_WHITELIST = (
+#     'http://127.0.0.1:3000'
+# )
