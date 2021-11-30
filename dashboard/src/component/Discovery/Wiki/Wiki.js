@@ -18,7 +18,14 @@ export default function Wiki() {
         const json = await response.json();
         setResults(json.query.search);
         setSearchInfo(json.query.searchinfo);
-    }
+    };
+
+    // useEffect(()=>{
+    //     handleSearch()
+    //     setTimeout(() => {
+    //         handleSearch();
+    //     }, 5000)
+    // });
 
     return (
         <div className="Wiki">

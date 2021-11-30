@@ -11,6 +11,12 @@
     margin: 10px;
 }
 
+.ex-title-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .beside-img {
     display: flex;
     flex-direction: column;
@@ -18,7 +24,7 @@
 }
 
 .explore-inner {
-    margin: 10px;
+    margin: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -39,5 +45,22 @@
 }
 
 .play-bar {
-    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+.choose {
+    display: flex;
+    flex-direction: row;
+    width: 290px;
+    justify-content: space-between;
+}
+
+.selectStyle {
+    /* margin-left: 15px; */
+    width: 120px;
+}
+.playBtn {
+    width: 25px;
+    height: 25px;
 }

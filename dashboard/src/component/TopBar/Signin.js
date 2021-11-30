@@ -4,9 +4,9 @@ import './TopBar.css';
 
 export default function Signin(props) {
 
-    function tryConnection(log, psw) {
+    // function tryConnection(log, psw) {
         
-    }
+    // }
 
     return (
         <div className="loginContainer">
