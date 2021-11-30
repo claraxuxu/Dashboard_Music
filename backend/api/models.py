@@ -11,10 +11,10 @@ class WidgetsParam(models.Model):
         return "[" + self.name + ", " + self.type + "]"
 
 class Widgets(models.Model):
-    name = models.CharField(max_length=50)
+    services = models.CharField(max_length=50)
     description = models.TextField(max_length=256)
-    params = models.ForeignKey(WidgetsParam, blank=True, on_delete=models.CASCADE)
-    clock = models.IntegerField(null=True, blank=True)
+    params = models.ForeignKey(WidgetsParam, on_delete=models.CASCADE)
+    clock = models.IntegerField(null=True)
     
     def __str__(self):
         return self.name
