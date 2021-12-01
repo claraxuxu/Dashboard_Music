@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .models import *
 
+from rest_framework.decorators import api_view
+
 import time
 import secrets
 
@@ -73,26 +75,21 @@ def register(request):
         "token": UserData.objects.get(username=u_name, password=p_word).token
     }
     return JsonResponse(data)
-    
-def edit(request):
-    pass
 
 def unregister(request):
-    u_name = request.GET.get('username', '')
-    p_word = request.GET.get('password', '')
-    
-    if (not u_name) or (not p_word) or (not UserData.objects.filter(username=u_name, password=p_word).count()):
+    try:
+        tk = request.headers['Clac-Token']
+        UserData.objects.get(token=tk).delete()
+        data = {
+            "token": "no longer exists..."
+        }
+        return JsonResponse(data)
+
+    except:
         return JsonResponse({"error": "The account doesn't exists"})
-
     
-    UserData.objects.get(username=u_name, password=p_word).delete()
-    
-    data = {
-        "token": "no longer exists..."
-    }
-    return JsonResponse(data)
 
-def account(request):
+def get_account(request):
     tk = request.headers['Clac-Token']
     data = UserData.objects.get(token=tk)
 
@@ -106,6 +103,7 @@ def account(request):
         "token": data.token,
     }
     return JsonResponse(ret)
+
 
 def edit(request):
     tk = request.headers['Clac-Token']
@@ -131,3 +129,19 @@ def edit(request):
         "phone_number": ph_num,
     }    
     return JsonResponse(data)
+
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
+def account(request):
+    if request.method == 'GET':
+        try:
+            return get_account(request)
+        except:
+            return signin(request)
+        pass
+    if request.method == 'POST':
+        return register(request)
+    if request.method == 'PUT':
+        return edit(request)
+    if request.method == 'DELETE':
+        return unregister(request)
+    return JsonResponse({'status': 404})
