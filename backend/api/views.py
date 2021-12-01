@@ -21,7 +21,57 @@ def get_client_services(request):
         },
         {
             "name":"deezer",
-            "widgets": [] #deezer
+            "widgets": [{
+                "name": "best_songs",
+                "description": "Display the artist chosen best songs",
+                "params": [{
+                    "name": "artist",
+                    "type": "string"
+                },
+                {
+                    "name": "clock",
+                    "type": "integer"
+                }]
+            },
+            {
+                "name": "newest_songs",
+                "description": "Display the artist newest songs",
+                "params": [{
+                    "name": "artist",
+                    "type": "string"
+                },
+                {
+                    "name": "clock",
+                    "type": "integer"
+                }]
+            },
+            {
+                "name": "playlist_song",
+                "description": "Display the song inside a playlist",
+                "params": [{
+                    "name": "playlist",
+                    "type": "string"
+                },
+                {
+                    "name": "clock",
+                    "type": "integer"
+                }]
+            },
+            {
+                "name": "song rank",
+                "description": "Display the rank of a chosen song",
+                "params": [{
+                    "name": "artist",
+                    "type": "string"
+                },{
+                    "name": "title",
+                    "type": "string"
+                },
+                {
+                    "name": "clock",
+                    "type": "integer"
+                }]
+            }]
         }
     ]
     
@@ -45,6 +95,8 @@ def about_json(request):
         }
     }
     return JsonResponse(data)
+
+###################################################""""
 
 def signin(request):
     
@@ -144,4 +196,24 @@ def account(request):
         return edit(request)
     if request.method == 'DELETE':
         return unregister(request)
+    return JsonResponse({'status': 404})
+
+################################################################
+
+def get_widgets(request):
+    
+    data = {}
+    return JsonResponse()
+
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
+def widgets(request):
+    if request.method == 'GET':
+        pass
+    if request.method == 'POST':
+        pass
+    if request.method == 'PUT':
+        pass
+    if request.method == 'DELETE':
+        pass
+    
     return JsonResponse({'status': 404})
