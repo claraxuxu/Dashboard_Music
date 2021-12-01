@@ -16,8 +16,19 @@ def get_client_services(request):
             "widgets": [] #spotify
         },
         {
-            "name":"youtube",
-            "widgets": [] #youtube
+            "name":"napster",
+            "widgets": [{
+                "name": "best_songs",
+                "description": "Display the artist chosen best songs",
+                "params": [{
+                    "name": "artist",
+                    "type": "string"
+                },
+                {
+                    "name": "clock",
+                    "type": "integer"
+                }]
+            }] 
         },
         {
             "name":"deezer",

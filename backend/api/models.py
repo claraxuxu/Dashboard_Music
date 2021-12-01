@@ -3,21 +3,14 @@ from django.contrib.postgres.fields import ArrayField
 
 # Create your models here.
 
-class WidgetsParam(models.Model):
-    name = models.CharField(max_length=50)
-    type = models.CharField(max_length=50)
-    
-    def __str__(self):
-        return "[" + self.name + ", " + self.type + "]"
-
 class Widgets(models.Model):
     services = models.CharField(max_length=50)
-    description = models.TextField(max_length=256)
-    params = models.ForeignKey(WidgetsParam, on_delete=models.CASCADE)
+    feature = models.CharField(max_length=50)
+    url_api = models.URLField(null=False)
     clock = models.IntegerField(null=True)
     
     def __str__(self):
-        return self.name
+        return "[ "+ self.services + " ](" + self.feature + ")"
 
 class UserData(models.Model):
     email = models.EmailField(max_length=256, null=True)
