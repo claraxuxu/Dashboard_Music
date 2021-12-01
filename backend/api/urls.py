@@ -1,11 +1,8 @@
 
 from django.urls import path
-from .views import register, signin, unregister, account, edit
+from .views import account, widgets
 
 urlpatterns = [
-    path('signin', signin),
-    path('register', register),
-    path('unregister', unregister),
     path('account', account),
-    path('edit', edit),
+    path('widgets', widgets)
 ]
