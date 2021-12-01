@@ -94,35 +94,29 @@ export default function Explore() {
 					} else if (item.type === types[2].value){
 						return (
 							<div className="explore-content" key={index}>
-									<div className="beside-img">
-										<div className="explore-inner">
-											<h3 className="explore-title">{item.type}</h3>
-											<img
-												className="minus-btn"
-												src={require('../../../assets/minus.png').default}
-												alt="delete"
-												onClick={() => delExplore(item.id)}
+								<div className="beside-img">
+									<div className="explore-inner">
+										<h3 className="explore-title">{item.type}</h3>
+										<img
+											className="minus-btn"
+											src={require('../../../assets/minus.png').default}
+											alt="delete"
+											onClick={() => delExplore(item.id)}
+										/>
+									</div>
+									<div className="play-bar">
+										<div className="choose">
+											<Select
+												defaultValue={types[0]}
+												options={types}
+												onChange={(e) => handleChangeType(e, item.id)}
+												className="selectStyle"
 											/>
 										</div>
-										<div className="play-bar">
-											<div className="choose">
-												<Select
-													defaultValue={types[0]}
-													options={types}
-													onChange={(e) => handleChangeType(e, item.id)}
-													className="selectStyle"
-												/>
-												<Select
-													defaultValue={spotifys[0]}
-													options={spotifys}
-													onChange={(e) => handleChangeType(e, item.id)}
-													className="selectStyle"
-												/>
-											</div>
-											<Clocks />
-										</div>
+										<Clocks />
 									</div>
 								</div>
+							</div>
 						)
 					} else {
 						return (
