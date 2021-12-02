@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './SideBar.css';
-import spotifyIcon from './../../assets/spotify.png';
+import HomeIcon from './../../assets/home.png';
 import profileIcon from './../../assets/profile.png';
-import youtubeIcon from './../../assets/youtube.png';
-import soundIcon from './../../assets/soundcloud.png';
+import MyIcon from './../../assets/myboard.png';
 
 export default function SideBar() {
     return (
@@ -15,19 +14,13 @@ export default function SideBar() {
                     <ul className="sidebarList">
                         <Link to="/" className="link">
                         <li className="sidebarListItem">
-                            <img src={spotifyIcon} alt="spotify" className="sidebarIcon" />
-                            Spotify
-                        </li>
-                        </Link>
-                        <Link to="/youtube" className="link"> 
-                        <li to="/youtube" className="sidebarListItem">
-                            <img src={youtubeIcon} alt="youtube" className="sidebarIcon" />
-                            Youtube
+                            <img src={HomeIcon} alt="spotify" className="sidebarIcon" />
+                            Acceuil
                         </li>
                         </Link>
                         <li className="sidebarListItem">
-                            <img src={soundIcon} alt="soundcloud" className="sidebarIcon" />
-                            SoundCloud
+                            <img src={MyIcon} alt="soundcloud" className="sidebarIcon" />
+                            MyBoard
                         </li>
                     </ul>
                     <h3 className="sidebarTitle">Tools</h3>
@@ -44,10 +37,6 @@ export default function SideBar() {
                             Profile
                         </li>
                         </Link>
-                        <li className="sidebarListItem">
-                            <img src={require('./../../assets/setting.png').default} alt="Settings" className="sidebarIcon" />
-                            Settings
-                        </li>
                     </ul>
                 </div>
             </div>

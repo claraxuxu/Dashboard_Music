@@ -7,8 +7,6 @@ import Subscribe from './Subscribe';
 export default function TopBar() {
     const [btnUp, setBtnUp] = useState(false)
     const [btnIn, setBtnIn] = useState(false)
-    const [username, setUsername] = useState("")
-    const [pwd, setPwd] = useState("")
 
     return (
         <div className="topbar">
@@ -29,18 +27,11 @@ export default function TopBar() {
                 </div>
             </div>
             <Popup trigger={btnUp} setTrigger={setBtnUp}>
-                <Subscribe
-                    name={username}
-                    setName={setUsername}
-                    trigger={btnIn}
-                    setTrigger={setBtnUp}
-                    setTrigger2={setBtnIn}
-                    pw={pwd}
-                    setPw={setPwd} />
+                <Subscribe trigger={btnUp} setTrigger={setBtnUp}/>
             </Popup>
 
             <Popup trigger={btnIn} setTrigger={setBtnIn}>
-                <Signin name={username} setName={setUsername} pw={pwd} setPw={setPwd} />
+                <Signin trigger={btnIn} setTrigger={setBtnIn}/>
             </Popup>
         </div>
     )

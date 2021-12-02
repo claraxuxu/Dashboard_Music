@@ -4,7 +4,7 @@ import './../Wiki/Wiki.css';
 
 export default function Giphy() {
 
-    const giphy_api = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=20&offset=0&q=";
+    const giphy_api = "https://api.giphy.com/v1/gifs/search?api_key=gmm10kXfbavtgvVVgFfy44ca0xyq2Y5w&limit=20&offset=0&q=";
     const [search, setSearch] = useState("");
     const [results, setResults] = useState([]);
 
@@ -24,7 +24,7 @@ export default function Giphy() {
 
     return (
         <div className="gi-container">
-            <h2>Daily Giphy</h2>
+            <h2>Clac Giphy🤣</h2>
             <form className="search-box" onSubmit={handleSearch}>
                 <input 
                     type="search"

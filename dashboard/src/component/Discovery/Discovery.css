@@ -13,3 +13,12 @@
     overflow-y: auto;
     margin-right: 15px;
 }
+
+@media(max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 85%;
+    }
+}

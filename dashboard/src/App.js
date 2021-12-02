@@ -7,9 +7,7 @@ import {
 } from "react-router-dom";
 import TopBar from './component/TopBar/TopBar';
 import SideBar from './component/SideBar/SideBar';
-import Spotify from './component/Spotify/Spotify';
-import Youtube from './component/Youtube/Youtube';
-import Setting from './component/Settings/Setting';
+import Board from './component/Board/Board';
 import Profile from './component/Profile/Profile';
 import Discovery from './component/Discovery/Discovery';
 
@@ -21,19 +19,13 @@ function App() {
             <SideBar />
             <Switch>
               <Route exact path="/">
-                <Spotify />
-              </Route>
-              <Route path="/youtube">
-                <Youtube />
+                <Board />
               </Route>
               <Route path="/discovery">
                 <Discovery />
               </Route>
               <Route path="/profile">
                 <Profile />
-              </Route>
-              <Route path="/setting">
-                <Setting />
               </Route>
             </Switch>
         </div>
