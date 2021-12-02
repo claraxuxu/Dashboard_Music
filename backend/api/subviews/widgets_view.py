@@ -3,7 +3,7 @@ from ..models import *
 from .widget_data.widgets import get_widget_data
 
 def get_widgets(request):
-    try:
+    # try:
         tk = request.headers['Clac-Token']
         userdata = UserData.objects.get(token=tk).widgets_set.all()
         
@@ -19,11 +19,11 @@ def get_widgets(request):
                 } for w in userdata
         ]}
         return JsonResponse(rep)
-    except:
-        return JsonResponse({"error": "The account doesn't exists"})
+    # except:
+    #     return JsonResponse({"error": "The account doesn't exists"})
     
 def add_widgets(request):
-    try:
+    # try:
         tk = request.headers['Clac-Token']
         service = request.GET.get('service', '')
         feature = request.GET.get('feature', '')
@@ -34,8 +34,8 @@ def add_widgets(request):
         userdata.widgets_set.create(services=service, feature=feature, params=args, clock=int(timer))
 
         return get_widgets(request)
-    except:
-        return JsonResponse({"error": "The account doesn't exists"})
+    # except:
+    #     return JsonResponse({"error": "The account doesn't exists"})
 
 def edit_widgets(request):
     try:
