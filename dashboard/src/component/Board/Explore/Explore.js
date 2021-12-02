@@ -41,7 +41,7 @@ export default function Explore() {
 	return (
 		<div className="col_container">
 			<div className="ex-title-bar">
-				<h2 className="title-name">Explore</h2>
+				<h2 className="title-name">Accueil</h2>
 				<button className="plus-btn"
 					onClick={() => addExplore("hello world")}>
 					<img

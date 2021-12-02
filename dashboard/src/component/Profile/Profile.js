@@ -41,6 +41,26 @@ export default function Profile() {
     const [loca1, setLoca1] = useState("Lyon, France");
     const [contact1, setContact1] = useState("00 00 00 00 00");
 
+    const getInfos = async (e) => {
+        e.preventDefault()
+        console.log(global.username)
+        try {
+            const infos = await fetch(`http://127.0.0.1:8080/api/account?token=${global.mytoken.token}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Clac-Token': global.mytoken.token
+                }
+            });
+            const json_info = await infos.json();
+            console.log(json_info)
+        }
+        catch(e) {
+            console.log("ERROR")
+        }
+    };
+
+
     const handleChanges = (e) => {
         e.preventDefault()
         setUserName(userName1);
@@ -64,7 +84,6 @@ export default function Profile() {
                         />
                         <div className="userShowTopTitle">
                             <span className="userShowUsername">Clara Clac</span>
-                            <span className="userShowUserTitle">Mobile app dev</span>
                         </div>
                     </div>
                     <div className="userShowBottom">
@@ -104,6 +123,9 @@ export default function Profile() {
                             <form>
                                 <button className="userUpdateBtn" onClick={handleChanges}>
                                     Update
+                                </button>
+                                <button  className="userUpdateBtn" onClick={getInfos}>
+                                    GET
                                 </button>
                             </form>
                         </div>
