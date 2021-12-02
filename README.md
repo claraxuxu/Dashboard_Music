@@ -4,15 +4,15 @@ Clac board est un dashboard musique, il contient 3 services qui sont deezer, spo
 <br/>
 
 # Frontend - ReactJS
-#### Introduction de ReactJS
+## Introduction de ReactJS
 React est une bibliothèque JavaScript open-source qui est utilisée pour construire des interfaces utilisateur spécifiquement pour des applications d'une seule page. Elle est utilisée pour gérer la couche d'affichage des applications web et mobiles. React nous permet également de créer des composants d'interface utilisateur réutilisables.
 <br/>
-#### Pourquoi nous avons choisi ReactJS?
+## Pourquoi nous avons choisi ReactJS?
 React nous permet de créer de grandes applications web qui peuvent modifier les données, sans avoir à recharger la page. L'objectif principal de React est d'être rapide, évolutif et simple. Il ne fonctionne que sur les interfaces utilisateur de l'application. Cela correspond à la vue du modèle MVC. Il peut être utilisé avec une combinaison d'autres bibliothèques ou frameworks JavaScript, tels que Angular JS dans MVC.
 
 Développer en ReactJS, la componentisation est utilisée pour extraire les éléments de la page, et l'implémentation de la page est équivalente à un mode d'assemblage. Pour les projets avec de grandes similitudes de pages, reactjs nous permet de développer plus efficacement et rapidement.
 <br/>
-#### Comment nous connectons les api?
+## Comment nous connectons les api?
 Nous avons choisi Fetch à connecter avec nos apis, mais aussi avec axios par fois.
 
 L'API Fetch fournit une interface JavaScript pour l'accès et la manipulation des parties de la pipeline HTTP, comme les requêtes et les réponses. Cela fournit aussi une méthode globale fetch() qui procure un moyen facile et logique de récupérer des ressources à travers le réseau de manière asynchrone.
