@@ -56,7 +56,6 @@ def get_account(request):
         "username": data.username,
         "created_at": data.created_at,
         "phone_number": data.phone_number,
-        "widgets": data.widgets,
         "token": data.token,
     }
     return JsonResponse(ret)
