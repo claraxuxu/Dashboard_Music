@@ -1,6 +1,4 @@
-# B-DEV-500-LYN-5-1-dashboard-yuhui.xu
-
-# Introduction
+# Documentation Clac-Board
 
 Clac board est un dashboard musique, il contient 3 services qui sont deezer, spotify et youtube pour nos utilisateurs. Vous pouvez ajouter les widgets que vous voulez sur ce platform.
 <br/>
