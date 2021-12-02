@@ -17,7 +17,7 @@ class UserData(models.Model):
 class Widgets(models.Model):
     services = models.CharField(max_length=50)
     feature = models.CharField(max_length=50)
-    params = models.CharField(null=False)
+    params = models.CharField(max_length=256, null=True)
     clock = models.IntegerField(null=True)
     userdata = models.ForeignKey(to=UserData, null=True, on_delete=models.CASCADE)
     
