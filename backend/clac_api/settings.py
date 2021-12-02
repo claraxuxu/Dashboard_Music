@@ -147,11 +147,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+from corsheaders.defaults import default_headers
 
 ### CORS HANDLING
 
 ALLOWED_HOSTS=['*']
+CORS_ALLOW_HEADERS = list(default_headers) + ['Clac-Token']
 CORS_ORIGIN_ALLOW_ALL = True
 
 

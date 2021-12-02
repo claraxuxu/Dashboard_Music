@@ -21,6 +21,7 @@ export default function Signin(props) {
                 }
             });
             global.mytoken = await token_user.json();
+            console.log(global.mytoken);
             if (global.mytoken.token) {
                 toast('Welcome to ClacBoard');
                 props.setTrigger(false);

@@ -43,13 +43,13 @@ export default function Profile() {
 
     const getInfos = async (e) => {
         e.preventDefault()
-        console.log(global.username)
+        console.log(global.mytoken.token)
         try {
-            const infos = await fetch(`http://127.0.0.1:8080/api/account?token=${global.mytoken.token}`, {
+            const infos = await fetch(`http://127.0.0.1:8080/api/account`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Clac-Token': global.mytoken.token
+                    'Clac-Token': global.mytoken.token,
                 }
             });
             const json_info = await infos.json();
