@@ -1,5 +1,6 @@
 from django.http import JsonResponse
 from ..models import *
+from .widget_data.widgets import get_widget_data
 
 def get_widgets(request):
     try:
@@ -12,8 +13,9 @@ def get_widgets(request):
                     "id": w.pk,
                     "services": w.services,
                     "feature": w.feature,
-                    "url_api": w.url_api,
+                    "params": w.params,
                     "clock": w.clock,
+                    "data": get_widget_data(w.services, w.feature, w.params)
                 } for w in userdata
         ]}
         return JsonResponse(rep)
@@ -25,11 +27,11 @@ def add_widgets(request):
         tk = request.headers['Clac-Token']
         service = request.GET.get('service', '')
         feature = request.GET.get('feature', '')
-        url = request.GET.get('url_api', '')
+        args = request.GET.get('params', '')
         timer = request.GET.get('clock', '60')
         
         userdata = UserData.objects.get(token=tk)
-        userdata.widgets_set.create(services=service, feature=feature, url_api=url, clock=int(timer))
+        userdata.widgets_set.create(services=service, feature=feature, params=args, clock=int(timer))
 
         return get_widgets(request)
     except:
@@ -42,10 +44,10 @@ def edit_widgets(request):
         
         widget = UserData.objects.get(token=tk).widgets_set.get(pk=id)
         
-        url = request.GET.get('url_api', widget.url_api)
+        args = request.GET.get('params', widget.params)
         timer = request.GET.get('clock', str(widget.clock))
         
-        widget.url_api = url
+        widget.params = args
         widget.clock = int(timer)
         widget.save()
 
