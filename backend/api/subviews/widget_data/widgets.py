@@ -1,18 +1,14 @@
 import requests
 from .deezer_widgets import *
 
-def get_invalid_data():
-    return {}
-
-
-def get_data_from_deezer_service(widget, url):
+def get_data_from_deezer_service(widget, params):
     available_widgets = {
         'best_songs': get_deezer_best_songs,
-        'newest_songs': get_deezer_newest_songs,
-        'playlist_song': get_deezer_playlist_songs,
+        'newest_release': get_deezer_newest_release,
         'song_rank': get_deezer_song_rank,
+        'artist_stats': get_deezer_artist_stats,
     }
-    return available_widgets[widget](url)
+    return available_widgets[widget](params)
 
 def get_data_from_napster_service(widget, url):
     pass
