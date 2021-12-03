@@ -6,13 +6,32 @@ import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure()
 export default function Signin(props) {
-    const [username, setUsername] = useState("")
-    const [pwd, setPwd] = useState("")
+    const [username, setUsername] = useState("");
+    const [pwd, setPwd] = useState("");
+    global.in = false;
+
+    const getUserInfo = async () => {
+        try {
+            const infos = await fetch(`http://127.0.0.1:8080/api/account`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Clac-Token': global.mytoken.token,
+                }
+            });
+            const json_info = await infos.json();
+            console.log(json_info.username)
+            global.username = json_info.username;
+            global.pwd = json_info.password;
+            global.email = json_info.email;
+            global.phone = json_info.phone_number
+        }
+        catch(e) { console.log(e) }
+    }
 
     const getUser = async () => {
         try {
-            global.username = username;
-            global.pwd = pwd;
+            global.in = false;
             const token_user = await fetch(`http://127.0.0.1:8080/api/account?username=${username}&password=${pwd}`, {
                 method: 'GET',
                 headers : { 
@@ -21,9 +40,10 @@ export default function Signin(props) {
                 }
             });
             global.mytoken = await token_user.json();
-            console.log(global.mytoken);
+            getUserInfo();
             if (global.mytoken.token) {
                 toast('Welcome to ClacBoard');
+                global.in = true;
                 props.setTrigger(false);
             } 
         }

@@ -15,6 +15,23 @@
     justify-content: space-between;
 }
 
+.topRight {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2%;
+}
+
+.Top-pp {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.Top-Username {
+    font-size: 17px;
+}
 .logo {
     margin-left: 10px;
     font-family: 'Reem Kufi', sans-serif;
