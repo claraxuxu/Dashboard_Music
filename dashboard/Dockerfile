@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node
 
 # set working directory
 WORKDIR /app
@@ -8,10 +8,7 @@ WORKDIR /app
 
 # install app dependencies
 COPY package.json ./
-RUN yarn
-
-EXPOSE 3000
+RUN npm install
 
 # add app
 COPY . ./
-CMD [ "yarn", "start" ]
