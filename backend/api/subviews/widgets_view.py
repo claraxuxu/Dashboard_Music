@@ -8,6 +8,7 @@ def get_widgets(request):
         userdata = UserData.objects.get(token=tk).widgets_set.all()
         
         rep = {
+            "size" : len(userdata),
             "widgets": [
                 {
                     "id": w.pk,
