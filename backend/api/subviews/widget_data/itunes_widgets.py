@@ -15,6 +15,3 @@ def get_itunes_best_songs(artist):
         } for music in musics['results'][1:]
     ]
     return interests
-    # requests.get('https://itunes.apple.com/lookup?id=1268429938&entity=album&limit=5')
-    #requests.get('https://itunes.apple.com/search?media=music&term=ld2j&limit=1')
-    # 1266032641

@@ -5,7 +5,6 @@ def fetch_napster_artist_id(artist):
     data = requests.get(url)
     data = data.json()
     artist_id = data['data'][0]['id']
-    print(artist_id)
     return artist_id
 
 
@@ -17,7 +16,6 @@ def get_napster_best_songs(artist):
     data = data.json()
     musics = data['tracks']
     
-    print(data)
     interests = [
         {
             "title": music["name"],

@@ -38,7 +38,7 @@ def account(request):
         return edit(request)
     if request.method == 'DELETE':
         return unregister(request)
-    return JsonResponse({'status': 404})
+    return JsonResponse({'status': 404}, status=404)
 
 
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])
@@ -51,4 +51,4 @@ def widgets(request):
         return edit_widgets(request)
     if request.method == 'DELETE':
         return delete_widgets(request)
-    return JsonResponse({'status': 404})
+    return JsonResponse({'status': 404}, status=404)
