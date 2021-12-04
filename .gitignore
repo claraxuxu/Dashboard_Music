@@ -29,6 +29,10 @@ dashboard/yarn.lock
 package-lock.json
 yarn.lock
 
+backend/clac_api/settings.py
+
 __pycache__/
 clac_env/
 sqlite3.db
+
+data/*

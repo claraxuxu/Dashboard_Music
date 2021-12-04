@@ -8,6 +8,7 @@ def get_widgets(request):
         userdata = UserData.objects.get(token=tk).widgets_set.all()
         
         rep = {
+            "size" : len(userdata),
             "widgets": [
                 {
                     "id": w.pk,
@@ -20,7 +21,7 @@ def get_widgets(request):
         ]}
         return JsonResponse(rep)
     except:
-        return JsonResponse({"source": "get_widgets don't work", "error": "The account doesn't exists"})
+        return JsonResponse({"source": "get_widgets don't work", "error": "The account doesn't exists"}, status=404)
     
 def add_widgets(request):
     try:
@@ -35,7 +36,7 @@ def add_widgets(request):
 
         return get_widgets(request)
     except:
-        return JsonResponse({"source": "add_widgets don't work", "error": "The account doesn't exists"})
+        return JsonResponse({"source": "add_widgets don't work", "error": "The account doesn't exists"}, status=403)
 
 def edit_widgets(request):
     try:
@@ -53,7 +54,7 @@ def edit_widgets(request):
 
         return get_widgets(request)
     except:
-        return JsonResponse({"error": "The account doesn't exists"})
+        return JsonResponse({"error": "The account doesn't exists"}, status=403)
 
 def delete_widgets(request):
     try:
@@ -66,4 +67,4 @@ def delete_widgets(request):
             UserData.objects.get(token=tk).widgets_set.get(pk=int(id)).delete()
         return get_widgets(request)
     except:
-        return JsonResponse({"error": "The account doesn't exists"})
+        return JsonResponse({"error": "The account doesn't exists"}, status=403)
