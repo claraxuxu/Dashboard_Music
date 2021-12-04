@@ -5,6 +5,7 @@ import ProfileB from './../../assets/profile_black.png';
 import Emaili from './../../assets/email.png';
 import Phone from './../../assets/phone.png';
 import Lock from './../../assets/lock.png';
+import './../Api';
 
 function Info(props) {
     return (
@@ -53,7 +54,7 @@ export default function Profile() {
 
     const EditProfile = async () => {
         try {
-            const infos = await fetch(`http://127.0.0.1:8080/api/account?email=${Email}&username=${userName}&password=${Pwd}&phone_number=${phone}`, {
+            const infos = await fetch(`${global.api.GetInfo}?email=${Email}&username=${userName}&password=${Pwd}&phone_number=${phone}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

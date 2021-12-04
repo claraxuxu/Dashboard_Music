@@ -7,8 +7,9 @@ import Clocks from './../../Discovery/Clock/Clocks';
 export default function Explore() {
 	const [title, setTitle] = useState([]);
 	const types = [
-		{value: 'Spotify', label: 'Spotify'},
-		{value: 'Youtube', label: 'Youtube'},
+		{value: 'Napster', label: 'Napster'},
+		{value: 'Deezer', label: 'Deezer'},
+		{value: 'nom', label: 'nom'},
 		{value: 'Clock', label: 'Clock'},
 	]
 	const spotifys = [
@@ -23,7 +24,7 @@ export default function Explore() {
 		setTitle([...title, {
 			title: t,
 			id: title.length,
-			type: "Spotify"
+			type: "Deezer"
 		}]
 		)
 	};

@@ -3,6 +3,7 @@ import OtherLogin from './OtherLogin';
 import './TopBar.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './../Api';
 
 toast.configure()
 export default function Signin(props) {
@@ -12,7 +13,7 @@ export default function Signin(props) {
 
     const getUserInfo = async () => {
         try {
-            const infos = await fetch(`http://127.0.0.1:8080/api/account`, {
+            const infos = await fetch(global.api.GetInfo, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -32,7 +33,7 @@ export default function Signin(props) {
     const getUser = async () => {
         try {
             global.in = false;
-            const token_user = await fetch(`http://127.0.0.1:8080/api/account?username=${username}&password=${pwd}`, {
+            const token_user = await fetch(`${global.api.GetInfo}?username=${username}&password=${pwd}`, {
                 method: 'GET',
                 headers : { 
                     'Content-Type': 'application/json',

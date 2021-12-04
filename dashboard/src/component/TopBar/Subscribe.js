@@ -3,6 +3,7 @@ import OtherLogin from './OtherLogin';
 import './TopBar.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './../Api';
 
 export default function Subscribe(props) {
     const [userName, setUsername] = useState("")
@@ -10,7 +11,7 @@ export default function Subscribe(props) {
 
     const subscribe = async () => {
         try {
-            const creat_user = await fetch(`http://127.0.0.1:8080/api/account?username=${userName}&password=${pwd}`, {
+            const creat_user = await fetch(`${global.api.GetInfo}?username=${userName}&password=${pwd}`, {
                 method: 'POST'
             });
             global.new_user = await creat_user.json();
