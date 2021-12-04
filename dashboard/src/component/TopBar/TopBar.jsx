@@ -5,7 +5,7 @@ import Signin from './Signin';
 import { Link } from "react-router-dom";
 import Subscribe from './Subscribe';
 
-export default function TopBar() {
+export default function TopBar(props) {
     const [btnUp, setBtnUp] = useState(false)
     const [btnIn, setBtnIn] = useState(false)
 
@@ -45,7 +45,7 @@ export default function TopBar() {
             </Popup>
 
             <Popup trigger={btnIn} setTrigger={setBtnIn}>
-                <Signin trigger={btnIn} setTrigger={setBtnIn}/>
+                <Signin trigger={btnIn} setTrigger={setBtnIn} setW={props.setW}/>
             </Popup>
         </div>
     )

@@ -1,38 +1,81 @@
 import React, { useState } from 'react';
 import '../Board.css';
 import './Explore.css';
-import Select from 'react-select';
-import Clocks from './../../Discovery/Clock/Clocks';
+import Plus from './../../../assets/plus.png';
+import Minus from './../../../assets/minus.png';
+import Deezer from './Deezer';
+import PopupW from './../../Tools/PopupW/PopupW';
+import './../../Api';
+import './../../config';
 
-export default function Explore() {
-	const [title, setTitle] = useState([]);
-	const types = [
-		{value: 'Napster', label: 'Napster'},
-		{value: 'Deezer', label: 'Deezer'},
-		{value: 'nom', label: 'nom'},
-		{value: 'Clock', label: 'Clock'},
-	]
-	const spotifys = [
-		{value: 'Best', label: 'Best'},
-		{value: 'Most Popular', label: 'Most Popular'},
-		{value: 'Random', label: 'Random'},
-	]
+function HeaderWidget(props) {
+	return (
+		<div className="explore-inner">
+			<h3 className="explore-title">{props.type}</h3>
+			<img
+				className="minus-btn"
+				src={Minus}
+				alt="delete"
+				onClick={() => props.del(props.id)}
+			/>
+		</div>
+	);
+}
 
+export default function Explore(props) {
 	const width = window.innerWidth;
+	const [title, setTitle] = useState();
+	const [params, setParams] = useState();
+	const [pop, setPop] = useState(false);
 
-	function addExplore(t) {
-		setTitle([...title, {
-			title: t,
-			id: title.length,
-			type: "Deezer"
-		}]
-		)
-	};
+	const CreateWidget = async (s, p, f) => {
+        try {
+            const infos = await fetch(`${global.api.GetWidget}?service=${s}&feature=${f}&params=${p}&clock=10`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Clac-Token': global.mytoken.token,
+                }
+            });
+			console.log(global.mytoken.token)
+            const json_info = await infos.json();
+			console.log(json_info);
+			setPop(false);
+			props.setW(json_info.widgets);
+        }
+        catch(e) { console.log(e) }
+    }
 
-	function delExplore(index1) {
-		const list_tmp = title.filter((item) => item.id !== index1);
-		setTitle(list_tmp)
-	};
+	const DeleteWidget = async (id) => {
+        try {
+            const infos = await fetch(`${global.api.GetWidget}?id=${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Clac-Token': global.mytoken.token,
+                }
+            });
+            const json_info = await infos.json();
+			props.setW(json_info.widgets);
+			global.gtitle=title;
+        }
+        catch(e) { console.log(e) }
+    }
+
+	const EditWidget = async (p, id) => {
+        try {
+            const infos = await fetch(`${global.api.GetWidget}?id=${id}&params=${p}&clock=60`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Clac-Token': global.mytoken.token,
+                }
+            });
+            const json_info = await infos.json();
+			props.setW(json_info.widgets);
+        }
+        catch(e) { console.log(e) }
+    }
 
 	function handleChangeType(value, id) {
 		title[id].type = value.label;
@@ -44,89 +87,70 @@ export default function Explore() {
 			<div className="ex-title-bar">
 				<h2 className="title-name">Accueil</h2>
 				<button className="plus-btn"
-					onClick={() => addExplore("hello world")}>
+					onClick={() => setPop(true)}>
 					<img
 						className="plus-img"
-						src={require('./../../../assets/plus.png').default}
+						src={Plus}
 						alt="plus"
 					/>
 				</button>
 			</div>
 			<div className="widget-main" style={{ width: width / 6 * 5 }}>
-				{
-					title.map((item, index) => {
-					if (item.type === types[0].value) {
-							return (
-								<div className="explore-content" key={index}>
-									<div className="beside-img">
-										<div className="explore-inner">
-											<h3 className="explore-title">{item.type}</h3>
-											<img
-												className="minus-btn"
-												src={require('../../../assets/minus.png').default}
-												alt="delete"
-												onClick={() => delExplore(item.id)}
-											/>
-										</div>
-										<div className="play-bar">
-											<div className="choose">
-												<Select
-													defaultValue={types[0]}
-													options={types}
-													onChange={(e) => handleChangeType(e, item.id)}
-													className="selectStyle"
-												/>
-												<Select
-													defaultValue={spotifys[0]}
-													options={spotifys}
-													onChange={(e) => handleChangeType(e, item.id)}
-													className="selectStyle"
-												/>
-											</div>
-											<img
-												src={require('./../../../assets/play.png').default}
-												alt="play"
-												className="playBtn"
-											/>
-										</div>
-									</div>
-								</div>
-							)
-					} else if (item.type === types[2].value){
+				{global.in && props.w ?
+					props.w.map((item, index) => {
 						return (
 							<div className="explore-content" key={index}>
 								<div className="beside-img">
-									<div className="explore-inner">
-										<h3 className="explore-title">{item.type}</h3>
-										<img
-											className="minus-btn"
-											src={require('../../../assets/minus.png').default}
-											alt="delete"
-											onClick={() => delExplore(item.id)}
-										/>
-									</div>
+									<p>{item.id}</p>
+									<p>{item.params}</p>
+									<HeaderWidget type={item.data.title} id={item.id} del={DeleteWidget} />
 									<div className="play-bar">
-										<div className="choose">
-											<Select
-												defaultValue={types[0]}
-												options={types}
-												onChange={(e) => handleChangeType(e, item.id)}
-												className="selectStyle"
-											/>
-										</div>
-										<Clocks />
-									</div>
+										<Deezer
+											on={handleChangeType}
+											fe={EditWidget}
+											id={item.id}
+											params={params}
+											setP={setParams}
+											link={item.data.cover}
+											d={item.data.release_date}
+										/>
+									</div> 
 								</div>
 							</div>
 						)
-					} else {
-						return (
-							<p>RIEN</p>
-						)
-					}
 					})
+				: null
 				}
 			</div>
+			<PopupW trigger={pop} setTrigger={setPop} create={CreateWidget}>
+            </PopupW>
 		</div>
 	)
 }
+
+
+// {
+// 	title.map((item, index) => {
+// 		return (
+// 			<div className="explore-content" key={index}>
+// 				<div className="beside-img">
+// 					<HeaderWidget type={item.type} if={item.id} del={delExplore} />
+// 					<div className="play-bar">
+// 					{item.type === global.Services[0].value ? 
+// 						<Deezer
+// 							on={handleChangeType}
+// 							id={item.id}
+// 							params={params}
+// 							setP={setParams}
+// 						/>
+// 					: (item.type === global.Services[3].value) ?
+// 						<Clockf on={handleChangeType}
+// 								id={item.id}
+// 						/>
+// 					: null}
+// 					</div> 
+// 				</div>
+// 			</div>
+// 		)
+// 	})
+// }

@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,14 +12,16 @@ import Profile from './component/Profile/Profile';
 import Discovery from './component/Discovery/Discovery';
 
 function App() {
+  const [Widget, setWidget] = useState();
+
   return (
     <Router>
-        <TopBar />
+        <TopBar setW={setWidget}/>
         <div className="container">
             <SideBar />
             <Switch>
               <Route exact path="/">
-                <Board />
+                <Board w={Widget} setW={setWidget}/>
               </Route>
               <Route path="/discovery">
                 <Discovery />

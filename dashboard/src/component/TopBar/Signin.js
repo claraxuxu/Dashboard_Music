@@ -3,13 +3,29 @@ import OtherLogin from './OtherLogin';
 import './TopBar.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import AsyncLocalStorage from '@createnextapp/async-local-storage'
 import './../Api';
 
 toast.configure()
 export default function Signin(props) {
     const [username, setUsername] = useState("");
     const [pwd, setPwd] = useState("");
-    global.in = false;
+
+    const getWidgets = async () => {
+        try {
+            const infos = await fetch(global.api.GetWidget, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Clac-Token': global.mytoken.token,
+                }
+            });
+            const json_info = await infos.json();
+			props.setW(json_info.widgets);
+            // await AsyncLocalStorage.setItem('Widget', json_info.widgets);
+        }
+        catch(e) { console.log(e) }
+    }
 
     const getUserInfo = async () => {
         try {
@@ -41,12 +57,14 @@ export default function Signin(props) {
                 }
             });
             global.mytoken = await token_user.json();
-            getUserInfo();
             if (global.mytoken.token) {
                 toast('Welcome to ClacBoard');
                 global.in = true;
+                localStorage.setItem('In', true);
+                getUserInfo();
+                getWidgets();
                 props.setTrigger(false);
-            } 
+            }
         }
         catch(e) { console.log(e) }
     };
