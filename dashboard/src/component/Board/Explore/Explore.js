@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../Board.css';
 import './Explore.css';
 import Select from 'react-select';
-import Clocks from './../../Discovery/Clock/Clocks';
 
 export default function Explore() {
 	const [title, setTitle] = useState([]);
@@ -91,33 +90,6 @@ export default function Explore() {
 									</div>
 								</div>
 							)
-					} else if (item.type === types[2].value){
-						return (
-							<div className="explore-content" key={index}>
-								<div className="beside-img">
-									<div className="explore-inner">
-										<h3 className="explore-title">{item.type}</h3>
-										<img
-											className="minus-btn"
-											src={require('../../../assets/minus.png').default}
-											alt="delete"
-											onClick={() => delExplore(item.id)}
-										/>
-									</div>
-									<div className="play-bar">
-										<div className="choose">
-											<Select
-												defaultValue={types[0]}
-												options={types}
-												onChange={(e) => handleChangeType(e, item.id)}
-												className="selectStyle"
-											/>
-										</div>
-										<Clocks />
-									</div>
-								</div>
-							</div>
-						)
 					} else {
 						return (
 							<p>RIEN</p>
