@@ -3,7 +3,6 @@ import OtherLogin from './OtherLogin';
 import './TopBar.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import AsyncLocalStorage from '@createnextapp/async-local-storage'
 import './../Api';
 
 toast.configure()

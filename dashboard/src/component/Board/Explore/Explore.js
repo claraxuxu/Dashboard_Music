@@ -6,10 +6,12 @@ import Minus from './../../../assets/minus.png';
 import Deezer from './Deezer';
 import Napster from './Napster';
 import Itunes from './Itunes';
+import { toast } from "react-toastify";
 import PopupW from './../../Tools/PopupW/PopupW';
 import './../../Api';
 import './../../config';
 
+toast.configure()
 function HeaderWidget(props) {
 	return (
 		<div className="explore-inner">
@@ -34,8 +36,6 @@ function HeaderWidget(props) {
 
 export default function Explore(props) {
 	const width = window.innerWidth;
-	const [title, setTitle] = useState();
-	const [params, setParams] = useState();
 	const [pop, setPop] = useState(false);
 
 	const CreateWidget = async (s, p, f) => {
@@ -49,7 +49,6 @@ export default function Explore(props) {
             });
 			console.log(global.mytoken.token)
             const json_info = await infos.json();
-			console.log(json_info);
 			setPop(false);
 			props.setW(json_info.widgets);
         }
@@ -67,7 +66,7 @@ export default function Explore(props) {
             });
             const json_info = await infos.json();
 			props.setW(json_info.widgets);
-			global.gtitle=title;
+			toast("Delected!")
         }
         catch(e) { console.log(e) }
     }
@@ -83,14 +82,10 @@ export default function Explore(props) {
             });
             const json_info = await infos.json();
 			props.setW(json_info.widgets);
+			toast("Edited!")
         }
         catch(e) { console.log(e) }
     }
-
-	function handleChangeType(value, id) {
-		title[id].type = value.label;
-		setTitle([...title]);
-	};
 
 	return (
 		<div className="col_container">
@@ -118,11 +113,8 @@ export default function Explore(props) {
 									{item.services === "deezer" ? 
 										<div className="play-bar">
 											<Deezer
-												on={handleChangeType}
 												i={item}
 												fe={EditWidget}
-												params={params}
-												setP={setParams}
 												link={item.data.cover}
 												d={item.data.release_date}
 											/>
@@ -130,22 +122,16 @@ export default function Explore(props) {
 									: item.services === "napster" ?
 										<div className="play-bar">
 											<Napster
-												on={handleChangeType}
 												i={item}
 												fe={EditWidget}
-												params={params}
-												setP={setParams}
 												link={item.data.cover}
 												d={item.data.release_date}
 											/>
 										</div>
 									: <div className="play-bar">
 											<Itunes
-												on={handleChangeType}
 												i={item}
 												fe={EditWidget}
-												params={params}
-												setP={setParams}
 												link={item.data.cover}
 												d={item.data.release_date}
 											/>

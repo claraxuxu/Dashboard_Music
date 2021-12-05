@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Board.css';
 import './Explore.css';
 import './../../config';
 
 export default function Deezer(props) {
+    const [para, setPara] = useState("");
+
     return (
         <div className="deezer-container">
             <div className="update-box">
                 <input
-                    value={props.params}
-                    onChange={e => props.setP(e.target.value, props.i.id)}
+                    value={para}
+                    onChange={e => setPara(e.target.value)}
                     className="inputParams">
                 </input>
-                <button className="update-btn">UPDATE</button>
+                <button
+                    className="update-btn"
+                    onClick={() => props.fe(para, props.i.id)}
+                >
+                UPDATE
+                </button>
             </div>
             {props.i.feature === "newest_release" ?
                 <div className="Info-box">
