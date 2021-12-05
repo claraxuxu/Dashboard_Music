@@ -1,11 +1,16 @@
 import requests
 from datetime import datetime as dt
 
-def fetch_deezer_artist_id(artist):
-    url = 'https://api.deezer.com/search?q=artist:"' + artist + '"'
+def fetch_deezer_artist_id(artist :str):
+    url = 'https://api.deezer.com/search/artist?q=' + artist
     data = requests.get(url)
     data = data.json()
-    artist_id = data['data'][0]['artist']['id']
+    artist_id = -1
+    for at in data['data']:
+        if artist.lower() == at['name'].lower():
+            artist_id = at['id']
+    if artist_id == -1:
+        artist_id = data['data'][0]['id']
     return artist_id
 
 def album_dates_comparer(data):
@@ -17,7 +22,7 @@ def album_dates_comparer(data):
     return interests
 
 def fetch_deezer_song_data(param):
-    url = 'https://api.deezer.com/search/track?q="' + param + '"'
+    url = 'https://api.deezer.com/search/track?q=' + param
     data = requests.get(url)
     data = data.json()
     song_data = data['data'][0]
