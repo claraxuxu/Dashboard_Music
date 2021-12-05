@@ -1,7 +1,7 @@
 .sideBar {
-    flex: 1;
+    display: flex;
+    width: 200px;
     height: calc(100vh - 50px);
-    position: sticky;
     top: 50px;
 }
 
@@ -26,17 +26,22 @@
 }
 
 .sidebarListItem {
-    padding: 5px;
+    padding: 8px;
     margin-bottom: 15px;
     cursor: pointer;
     display: flex;
     align-items: center;
+    border-radius: 5px;
 }
 
 .sidebarListItem.active, .sidebarListItem:hover {
     background: linear-gradient(95.79deg, rgba(136, 105, 235, 0.43) -19.06%, rgba(196, 196, 196, 0) 82.41%);
 }
 
+.link {
+    color: black;
+    text-decoration: none;
+}
 .sidebarIcon {
     width: 28px;
     height: 28px;

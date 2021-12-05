@@ -1,0 +1,45 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-inner {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 857px;
+    height: 530px;
+    background-color: #fff;
+}
+
+.loginImg {
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 400ms ease-in-out;
+}
+
+.close-btn:hover {
+    background-color: #CFC6EE;
+}
+
+.close-img {
+    width: 30px;
+    height: 30px;
+}

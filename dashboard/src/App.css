@@ -7,11 +7,6 @@
     display: flex;
 }
 
-.Other {
-    flex: 7;
-    background-color: #E5E5E5;
-}
-
 .row {
     display: flex;
     flex-direction: row;

@@ -1,0 +1,146 @@
+.explore-content {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0.3px 0.3px 11px 0px rgba(0,0,0,0.63);
+    -moz-box-shadow: 0.3px 0.3px 11px 0px rgba(0,0,0,0.63);
+    box-shadow: 0.3px 0.3px 11px 0px rgba(0,0,0,0.63);
+    width: 300px;
+    background-color: white;
+    margin: 10px;
+}
+
+.ex-title-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.beside-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.explore-inner {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.explore-title {
+    margin-right: 15px;
+}
+
+.explore_albumImg {
+    width: 110px;
+    height: 110px;
+}
+
+.minus-btn {
+    width: 20px;
+    height: 20px;
+}
+
+.play-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+.choose {
+    display: flex;
+    flex-direction: row;
+    width: 290px;
+    justify-content: space-between;
+}
+
+.inputParams {
+    height: 30px;
+    width: 50%;
+    border-radius: 5px;
+    border-color: #CACACA;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.selectStyle {
+    /* margin-left: 15px; */
+    width: 120px;
+}
+
+.update-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.update-btn {
+    height: 30px;
+    border-radius: 5px;
+    align-items: center;
+    font-size: 14px;
+    border-color: #7A58E7;
+    transition: all 400ms ease-in-out;
+}
+
+.update-btn:hover {
+    background-color: #CFC6EE;
+}
+
+
+.Info-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+
+.Album-img {
+    width: 80px;
+    height: 80px;
+}
+
+.Infos_deezer {
+    display: flex;
+    flex-direction: column;
+}
+
+.Infos_Detail {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.playBtn {
+    width: 25px;
+    height: 25px;
+}
+
+.scroll-box {
+    height: 100px;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+
+.rank-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rank-i {
+    margin-right: 5px;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.rank-t {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2px;
+    white-space: pre-line;
+}

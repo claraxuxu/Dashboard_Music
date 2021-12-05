@@ -1,32 +1,39 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import TopBar from './component/TopBar/TopBar';
 import SideBar from './component/SideBar/SideBar';
-
-// function Rows(props) {
-//     return (
-//         <div className="row">
-//             <img className="icon"
-//                 src={props.imgsrc}
-//                 alt={props.title}
-//             />
-//             <text className="options">{props.title}</text>
-//         </div>
-//     )
-// }
+import Board from './component/Board/Board';
+import Profile from './component/Profile/Profile';
+import Discovery from './component/Discovery/Discovery';
 
 function App() {
+  const [Widget, setWidget] = useState();
+
   return (
-    <div className="content">
-        <TopBar />
+    <Router>
+        <TopBar setW={setWidget}/>
         <div className="container">
             <SideBar />
-            <div className="Other">
-                otherpages
-
-            </div>
+            <Switch>
+              <Route exact path="/">
+                <Board w={Widget} setW={setWidget}/>
+              </Route>
+              <Route path="/discovery">
+                <Discovery />
+              </Route>
+              {Widget ?
+              <Route path="/profile">
+                <Profile />
+              </Route>
+              :null}
+            </Switch>
         </div>
-    </div>
+    </Router>
   );
 }
 
