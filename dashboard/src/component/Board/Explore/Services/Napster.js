@@ -1,7 +1,7 @@
 import React from 'react';
-import '../Board.css';
-import './Explore.css';
-import './../../config';
+import './../../Board.css';
+import './../Explore.css';
+import './../../../config';
 
 export default function Napster(props) {
     return (

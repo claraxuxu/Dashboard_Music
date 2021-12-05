@@ -152,11 +152,19 @@
 }
 
 .userUpdateBtn {
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-    background-color: #8869EB;
-    color: white;
+    width: 150px;
+    height: 40px;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 14px;
     font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background-color: #9a8ec7;
+    color: white;
+    transition: all 400ms ease-in-out;
+}
+
+.userUpdateBtn:hover {
+    background-color: #8869EB;
 }

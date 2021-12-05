@@ -1,39 +1,17 @@
 import React, { useState } from 'react';
 import '../Board.css';
 import './Explore.css';
-import Plus from './../../../assets/plus.png';
-import Minus from './../../../assets/minus.png';
-import Deezer from './Deezer';
-import Napster from './Napster';
-import Itunes from './Itunes';
+import Deezer from './Services/Deezer';
+import Napster from './Services/Napster';
+import Itunes from './Services/Itunes';
 import { toast } from "react-toastify";
 import PopupW from './../../Tools/PopupW/PopupW';
+import HeaderWidget from './Tools/HeaderWidget';
+import TopWidget from './Tools/TopWidget';
 import './../../Api';
 import './../../config';
 
 toast.configure()
-function HeaderWidget(props) {
-	return (
-		<div className="explore-inner">
-			{props.i.feature === "song_rank" ?
-				<h3 className="explore-title">Best song - {props.i.params}</h3>
-			: props.i.feature === "artist_stats" ?
-				<h3 className="explore-title">Artist Info - {props.i.params}</h3>
-			: props.i.feature === "newest_release" ?
-				<h3 className="explore-title">Newest - {props.i.params}</h3>
-			:
-				<h3 className="explore-title">Song Rank - {props.i.params}</h3>
-			}
-			<img
-				className="minus-btn"
-				src={Minus}
-				alt="delete"
-				onClick={() => props.del(props.i.id)}
-			/>
-		</div>
-	);
-}
-
 export default function Explore(props) {
 	const width = window.innerWidth;
 	const [pop, setPop] = useState(false);
@@ -89,17 +67,7 @@ export default function Explore(props) {
 
 	return (
 		<div className="col_container">
-			<div className="ex-title-bar">
-				<h2 className="title-name">Accueil</h2>
-				<button className="plus-btn"
-					onClick={() => setPop(true)}>
-					<img
-						className="plus-img"
-						src={Plus}
-						alt="plus"
-					/>
-				</button>
-			</div>
+			<TopWidget setPop={setPop} />
 			<div className="widget-main" style={{ width: width / 6 * 5 }}>
 				{global.in && props.w ?
 					props.w.map((item, index) => {
@@ -107,9 +75,9 @@ export default function Explore(props) {
 							<div className="explore-content" key={index}>
 								<div className="beside-img">
 									<HeaderWidget 
-									i={item}
-									service={item.services}
-									del={DeleteWidget} />
+										i={item}
+										service={item.services}
+										del={DeleteWidget} />
 									{item.services === "deezer" ? 
 										<div className="play-bar">
 											<Deezer

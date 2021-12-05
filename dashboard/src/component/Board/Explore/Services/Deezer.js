@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../Board.css';
-import './Explore.css';
-import './../../config';
+import './../../Board.css';
+import './../Explore.css';
+import './../../../config';
 
 export default function Deezer(props) {
     const [para, setPara] = useState("");
@@ -18,7 +18,7 @@ export default function Deezer(props) {
                     className="update-btn"
                     onClick={() => props.fe(para, props.i.id)}
                 >
-                UPDATE
+                Update
                 </button>
             </div>
             {props.i.feature === "newest_release" ?

@@ -88,10 +88,14 @@
     width: 150px;
     height: 40px;
     border-radius: 10px;
-    background-color: #8869EB;
+    background-color: #9a8ec7;
     align-items: center;
     font-size: 14px;
     color: white;
     font-weight: normal;
     transition: all 400ms ease-in-out;
+}
+
+.create-btn:hover {
+    background-color: #8869EB;
 }

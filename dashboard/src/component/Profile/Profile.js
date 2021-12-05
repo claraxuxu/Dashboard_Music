@@ -88,7 +88,7 @@ export default function Profile() {
                             alt="userImg"
                         />
                         <div className="userShowTopTitle">
-                            <span className="userShowUsername">Clara Clac</span>
+                            <span className="userShowUsername">Profile Informations</span>
                         </div>
                     </div>
                     <div className="userShowBottom">
