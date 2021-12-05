@@ -24,5 +24,3 @@ class Widgets(models.Model):
     def __str__(self):
         return "["+ self.services + "](" + self.feature + ")"
     
-    
-# from api.models import *; UserData.objects.create(username="jonathan", password="jonathan")
