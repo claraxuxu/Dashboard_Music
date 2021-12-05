@@ -14,17 +14,19 @@ export default function SideBar() {
                     <ul className="sidebarList">
                         <Link to="/" className="link">
                         <li className="sidebarListItem">
-                            <img src={HomeIcon} alt="spotify" className="sidebarIcon" />
-                            Acceuil
-                        </li>
-                        </Link>
-                        <li className="sidebarListItem">
                             <img src={MyIcon} alt="soundcloud" className="sidebarIcon" />
                             MyBoard
                         </li>
+                        </Link>
                     </ul>
                     <h3 className="sidebarTitle">Tools</h3>
                     <ul className="sidebarList">
+                        <Link to="/help" className="link">
+                        <li className="sidebarListItem">
+                            <img src={HomeIcon} alt="spotify" className="sidebarIcon" />
+                            Help
+                        </li>
+                        </Link>
                         <Link to="/discovery" className="link"> 
                         <li className="sidebarListItem">
                             <img src={require('./../../assets/discover.png').default} alt="Discovery" className="sidebarIcon" />

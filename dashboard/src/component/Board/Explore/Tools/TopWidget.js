@@ -8,7 +8,7 @@ import './../../../config';
 export default function TopWidget(props) {
 	return (
 		<div className="ex-title-bar">
-			<h2 className="title-name">Accueil</h2>
+			<h2 className="title-name">MyBoard</h2>
 			<button className="plus-btn"
 				onClick={() => props.setPop(true)}>
 				<img
