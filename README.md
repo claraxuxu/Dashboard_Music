@@ -60,7 +60,7 @@ axios.get(`http://127.0.0.1:8080/api/account`)
 Cliquer sur le bouton 'sign in' en haut à droit de notre dashboard, vous pouvez voir une page comme au-dessous
 
 Vous pouvez se connecter sur ClacBoard avec un compte Google ou avec un compte de ClacBoard.
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20b78443d9d74f849a4c796496c35e4e.PNG?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2xhcmF4dQ==,size_1,color_FFFFFF,t_70,g_se,x_16#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/9df09eef07664996bf05648f076ee080.PNG?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2xhcmF4dQ==,size_1,color_FFFFFF,t_70,g_se,x_16#pic_center)
 ## Dashboard
 ![un example de notre dashboard](https://img-blog.csdnimg.cn/65b9ded2a4b24235841b1a6a80613770.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2xhcmF4dQ==,size_1,color_FFFFFF)C'est l'acceuil de notre dashboard, en suivant la première flèche, vous pouvez ajouter un widget, il inclut 3 différentes services, il y a **Deezer**, **Napster** et **Itunes** comme choix. Vous pouvez aussi choisir le type de widget, par example les chansons les plus populaires d'un artiste ou les ranking d'un artiste.
 
