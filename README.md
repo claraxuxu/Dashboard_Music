@@ -55,3 +55,22 @@ axios.get(`http://127.0.0.1:8080/api/account`)
     console.log(e);
   });
 ```
+# How to use ClacBoard
+## Connection
+Cliquer sur le bouton 'sign in' en haut à droit de notre dashboard, vous pouvez voir une page comme au-dessous
+
+Vous pouvez se connecter sur ClacBoard avec un compte Google ou avec un compte de ClacBoard.
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20b78443d9d74f849a4c796496c35e4e.PNG?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2xhcmF4dQ==,size_1,color_FFFFFF,t_70,g_se,x_16#pic_center)
+## Dashboard
+![un example de notre dashboard](https://img-blog.csdnimg.cn/65b9ded2a4b24235841b1a6a80613770.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2xhcmF4dQ==,size_1,color_FFFFFF)C'est l'acceuil de notre dashboard, en suivant la première flèche, vous pouvez ajouter un widget, il inclut 3 différentes services, il y a **Deezer**, **Napster** et **Itunes** comme choix. Vous pouvez aussi choisir le type de widget, par example les chansons les plus populaires d'un artiste ou les ranking d'un artiste.
+
+Ensuite, avec deuxième flèche, vous pouvez donc supprimer les widgets que vous voulez plus, afin de mettre le platform plus propre ou plus à jour à vos favoris.
+
+Et à la fin, vous pouvez mettre à jour votre widget en utilisant le troisième flèche, vous pouvez remettre un nom d'artiste.
+
+## Discovery
+![在这里插入图片描述](https://img-blog.csdnimg.cn/92f836df1ed74cd9a6e6596a24955b0a.PNG?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2xhcmF4dQ==,size_1,color_FFFFFF,t_70,g_se,x_16#pic_center)Sauf la partie des services musiques, vous pouvez également vous profiter sur la partie 'Discovery'. Nous possèdons deux parties de 'fun' avec **wikipedia** et **Giphy**.
+
+Vous pouvez utiliser cette partie même sans vous connecter sur notre ClacBoard.
+
+J'espère que notre dashboard vous plaît!
