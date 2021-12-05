@@ -1,8 +1,3 @@
-global.icon = {
-    plus: './../assets/plus.png',
-    minus: './../assets/minus.png'
-}
-
 global.Services = [
     {value: 'deezer', label: 'Deezer'},
     {value: 'Napster', label: 'Napster'},
@@ -11,7 +6,7 @@ global.Services = [
 
 global.Feature = [
     {value: 'newest_release', label: 'Newest'},
-    {value: 'song_rank', label: 'Rank'},
-    {value: 'best_songs', label: 'Best'},
+    {value: 'song_rank', label: 'Best'},
+    {value: 'best_songs', label: 'Rank'},
     {value: 'artist_stats', label: 'Infos'},
 ]

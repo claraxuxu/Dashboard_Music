@@ -40,9 +40,9 @@
 }
 
 .widget-main {
-    display: flex;
-    flex-direction: row;
+    display: grid;
     width: 500px;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .widget-content {

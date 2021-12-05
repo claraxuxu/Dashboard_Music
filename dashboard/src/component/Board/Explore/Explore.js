@@ -11,12 +11,19 @@ import './../../config';
 function HeaderWidget(props) {
 	return (
 		<div className="explore-inner">
-			<h3 className="explore-title">{props.type}</h3>
+			{props.i.feature === "song_rank" ?
+				<h3 className="explore-title">Best song - {props.i.params}</h3>
+			: props.i.feature === "artist_stats" ?
+				<h3 className="explore-title">Artist Info - {props.i.params}</h3>
+			: props.i.feature === "newest_release" ?
+				<h3 className="explore-title">Newest - {props.i.params}</h3>
+			:	<h3 className="explore-title">Song Rank - {props.i.params}</h3>
+			}
 			<img
 				className="minus-btn"
 				src={Minus}
 				alt="delete"
-				onClick={() => props.del(props.id)}
+				onClick={() => props.del(props.i.id)}
 			/>
 		</div>
 	);
@@ -101,20 +108,24 @@ export default function Explore(props) {
 						return (
 							<div className="explore-content" key={index}>
 								<div className="beside-img">
-									<p>{item.id}</p>
-									<p>{item.params}</p>
-									<HeaderWidget type={item.data.title} id={item.id} del={DeleteWidget} />
-									<div className="play-bar">
-										<Deezer
-											on={handleChangeType}
-											fe={EditWidget}
-											id={item.id}
-											params={params}
-											setP={setParams}
-											link={item.data.cover}
-											d={item.data.release_date}
-										/>
-									</div> 
+									<HeaderWidget 
+									i={item}
+									service={item.services}
+									del={DeleteWidget} />
+									{item.services === "deezer" ? 
+										<div className="play-bar">
+											<Deezer
+												on={handleChangeType}
+												i={item}
+												fe={EditWidget}
+												params={params}
+												setP={setParams}
+												link={item.data.cover}
+												d={item.data.release_date}
+											/>
+										</div>
+									: null
+									}
 								</div>
 							</div>
 						)
