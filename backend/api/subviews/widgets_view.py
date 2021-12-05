@@ -6,7 +6,7 @@ def get_widgets(request):
     try:
         tk = request.headers['Clac-Token']
         userdata = UserData.objects.get(token=tk).widgets_set.all()
-        
+        print(userdata) 
         rep = {
             "size" : len(userdata),
             "widgets": [

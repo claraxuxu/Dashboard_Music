@@ -24,9 +24,12 @@ def get_data_from_itunes_service(widget, params):
     return available_widgets[widget](params)
 
 def get_widget_data(service, widget, params):
-    available_services = {
-        'deezer': get_data_from_deezer_service,
-        'napster': get_data_from_napster_service,
-        'itunes': get_data_from_itunes_service
-    }
-    return available_services[service](widget, params)
+    try:
+        available_services = {
+            'deezer': get_data_from_deezer_service,
+            'napster': get_data_from_napster_service,
+            'itunes': get_data_from_itunes_service
+        }
+        return available_services[service](widget, params)
+    except:
+        return {}

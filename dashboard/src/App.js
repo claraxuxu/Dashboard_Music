@@ -26,9 +26,11 @@ function App() {
               <Route path="/discovery">
                 <Discovery />
               </Route>
+              {Widget ?
               <Route path="/profile">
                 <Profile />
               </Route>
+              :null}
             </Switch>
         </div>
     </Router>
