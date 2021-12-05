@@ -32,4 +32,4 @@ jobs:
     - name: Run migrations
       run: python backend/manage.py migrate
     - name: Run tests
-      run: python -Wa manage.py test -p "*_tests.py" -d
+      run: python -Wa backend/manage.py test -p "*_tests.py" -d
