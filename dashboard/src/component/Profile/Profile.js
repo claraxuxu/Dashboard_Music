@@ -5,8 +5,10 @@ import ProfileB from './../../assets/profile_black.png';
 import Emaili from './../../assets/email.png';
 import Phone from './../../assets/phone.png';
 import Lock from './../../assets/lock.png';
+import { toast } from 'react-toastify'; 
 import './../Api';
 
+toast.configure()
 function Info(props) {
     return (
         <div className="userShowInfo">
@@ -62,6 +64,11 @@ export default function Profile() {
                 }
             });
             const json_info = await infos.json();
+            global.username = userName;
+            global.pwd = Pwd;
+            global.email = Email;
+            global.phone = phone;
+            toast("Profile modified")
             console.log(json_info)
         }
         catch(e) {console.log(e)}
@@ -87,7 +94,7 @@ export default function Profile() {
                     <div className="userShowBottom">
                         <span className="userShowTitle">Account Details</span>
                         <Info i = {ProfileB} title={userName} />
-                        <Info i = {Lock} title={Pwd} />
+                        <Info i = {Lock} title="*******" />
                         <span className="userShowTitle">Contact Details</span>
                         <Info i = {Emaili} title={Email} />
                         <Info i = {Phone} title={phone} />
@@ -98,7 +105,7 @@ export default function Profile() {
                     <form className="userUpdateForm">
                         <div className="userUpdateLeft">
                             <InfoModif title="Username" valeur={userName} setvalue={setUserName}/>
-                            <InfoModif title="Password" valeur={Pwd} setvalue={setPwd} />
+                            <InfoModif title="Password" valeur="*****" setvalue={setPwd} />
                             <InfoModif title="Email" valeur={Email} setvalue={setEmail} />
                             <InfoModif title="Phone Number" valeur={phone} setvalue={setPhone} />
                         </div>

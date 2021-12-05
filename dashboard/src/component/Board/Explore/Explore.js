@@ -4,6 +4,8 @@ import './Explore.css';
 import Plus from './../../../assets/plus.png';
 import Minus from './../../../assets/minus.png';
 import Deezer from './Deezer';
+import Napster from './Napster';
+import Itunes from './Itunes';
 import PopupW from './../../Tools/PopupW/PopupW';
 import './../../Api';
 import './../../config';
@@ -17,7 +19,8 @@ function HeaderWidget(props) {
 				<h3 className="explore-title">Artist Info - {props.i.params}</h3>
 			: props.i.feature === "newest_release" ?
 				<h3 className="explore-title">Newest - {props.i.params}</h3>
-			:	<h3 className="explore-title">Song Rank - {props.i.params}</h3>
+			:
+				<h3 className="explore-title">Song Rank - {props.i.params}</h3>
 			}
 			<img
 				className="minus-btn"
@@ -124,7 +127,29 @@ export default function Explore(props) {
 												d={item.data.release_date}
 											/>
 										</div>
-									: null
+									: item.services === "napster" ?
+										<div className="play-bar">
+											<Napster
+												on={handleChangeType}
+												i={item}
+												fe={EditWidget}
+												params={params}
+												setP={setParams}
+												link={item.data.cover}
+												d={item.data.release_date}
+											/>
+										</div>
+									: <div className="play-bar">
+											<Itunes
+												on={handleChangeType}
+												i={item}
+												fe={EditWidget}
+												params={params}
+												setP={setParams}
+												link={item.data.cover}
+												d={item.data.release_date}
+											/>
+										</div>
 									}
 								</div>
 							</div>
@@ -138,30 +163,3 @@ export default function Explore(props) {
 		</div>
 	)
 }
-
-
-// {
-// 	title.map((item, index) => {
-// 		return (
-// 			<div className="explore-content" key={index}>
-// 				<div className="beside-img">
-// 					<HeaderWidget type={item.type} if={item.id} del={delExplore} />
-// 					<div className="play-bar">
-// 					{item.type === global.Services[0].value ? 
-// 						<Deezer
-// 							on={handleChangeType}
-// 							id={item.id}
-// 							params={params}
-// 							setP={setParams}
-// 						/>
-// 					: (item.type === global.Services[3].value) ?
-// 						<Clockf on={handleChangeType}
-// 								id={item.id}
-// 						/>
-// 					: null}
-// 					</div> 
-// 				</div>
-// 			</div>
-// 		)
-// 	})
-// }

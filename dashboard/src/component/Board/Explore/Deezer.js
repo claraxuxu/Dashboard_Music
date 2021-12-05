@@ -1,8 +1,6 @@
 import React from 'react';
 import '../Board.css';
 import './Explore.css';
-import Select from 'react-select';
-import PlayIcon from './../../../assets/play.png';
 import './../../config';
 
 export default function Deezer(props) {
@@ -44,14 +42,12 @@ export default function Deezer(props) {
             : props.i.feature === 'best_songs' ?
                 <div className="scroll-box">
                     {props.i.data.map((item, index) => {
-                        if (index < 6) {
-                            return (
-                                <div className="rank-box">
-                                    <p className="rank-i">{index}</p>
-                                    <p className="rank-t">{item.title}</p>
-                                </div>
-                            )
-                        }
+                        return (
+                            <div className="rank-box">
+                                <p className="rank-i">{index}</p>
+                                <p className="rank-t">{item.title}</p>
+                            </div>
+                        )
                     })}
                 </div>
             :

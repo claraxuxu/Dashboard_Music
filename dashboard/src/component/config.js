@@ -1,7 +1,7 @@
 global.Services = [
     {value: 'deezer', label: 'Deezer'},
-    {value: 'Napster', label: 'Napster'},
-    {value: 'Itunes', label: 'Itunes'},
+    {value: 'napster', label: 'Napster'},
+    {value: 'itunes', label: 'Itunes'},
 ]
 
 global.Feature = [
@@ -9,4 +9,8 @@ global.Feature = [
     {value: 'song_rank', label: 'Best'},
     {value: 'best_songs', label: 'Rank'},
     {value: 'artist_stats', label: 'Infos'},
+]
+
+global.FeatureOther = [
+    {value: 'best_songs', label: 'Rank'}
 ]

@@ -34,7 +34,15 @@ export default function PopupW(props) {
                                     className="selectStyle"
                                 />
                             </div>
-                        : null
+                        : <div>
+                                <label className="labels">Feature</label>
+                                <Select
+                                    defaultValue={global.FeatureOther[0]}
+                                    options={global.FeatureOther}
+                                    onChange={(e) => setF(e.value)}
+                                    className="selectStyle"
+                                />
+                            </div>
                         }
                         <label className="labels">Signer</label>
                         <input
