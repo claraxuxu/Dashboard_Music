@@ -62,7 +62,8 @@ Cliquer sur le bouton 'sign in' en haut à droit de notre dashboard, vous pouvez
 Vous pouvez se connecter sur ClacBoard avec un compte Google ou avec un compte de ClacBoard.
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/9df09eef07664996bf05648f076ee080.PNG?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2xhcmF4dQ==,size_1,color_FFFFFF,t_70,g_se,x_16#pic_center)
 ## Dashboard
-![在这里插入图片描述](https://img-blog.csdnimg.cn/791733efb8504788b4744090b59ca77c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2xhcmF4dQ==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/791733efb8504788b4744090b59ca77c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2xhcmF4dQ==,size_1,color_FFFFFF,t_70,g_se,x_16#pic_center)
+<br/>
 C'est l'acceuil de notre dashboard, en suivant la première flèche, vous pouvez ajouter un widget, il inclut 3 différentes services, il y a **Deezer**, **Napster** et **Itunes** comme choix. Vous pouvez aussi choisir le type de widget, par example les chansons les plus populaires d'un artiste ou les ranking d'un artiste.
 
 Ensuite, avec deuxième flèche, vous pouvez donc supprimer les widgets que vous voulez plus, afin de mettre le platform plus propre ou plus à jour à vos favoris.
@@ -70,7 +71,8 @@ Ensuite, avec deuxième flèche, vous pouvez donc supprimer les widgets que vous
 Et à la fin, vous pouvez mettre à jour votre widget en utilisant le troisième flèche, vous pouvez remettre un nom d'artiste.
 
 ## Discovery
-![在这里插入图片描述](https://img-blog.csdnimg.cn/0e715c46f50941f4b9b25ddf15c10621.PNG?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2xhcmF4dQ==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/0e715c46f50941f4b9b25ddf15c10621.PNG?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2xhcmF4dQ==,size_1,color_FFFFFF,t_70,g_se,x_16#pic_center)
+<br/>
 Sauf la partie des services musiques, vous pouvez également vous profiter sur la partie 'Discovery'. Nous possèdons deux parties de 'fun' avec **wikipedia** et **Giphy**.
 
 Vous pouvez utiliser cette partie même sans vous connecter sur notre ClacBoard.
