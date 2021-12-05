@@ -21,7 +21,6 @@ export default function Signin(props) {
             });
             const json_info = await infos.json();
 			props.setW(json_info.widgets);
-            // await AsyncLocalStorage.setItem('Widget', json_info.widgets);
         }
         catch(e) { console.log(e) }
     }
@@ -70,7 +69,7 @@ export default function Signin(props) {
 
     return (
         <div className="loginContainer">
-            <OtherLogin />
+            <OtherLogin setTrigger={props.setTrigger} setW={props.setW}/>
             <p style={{textAlign:'center', margin:0, padding:0}}>-- or --</p>
             <div>
                 <label style={{textAlign:'left'}}>Username</label>
@@ -84,6 +83,7 @@ export default function Signin(props) {
                 <input
                     value={pwd}
                     onChange={e => setPwd(e.target.value)}
+                    type="password"
                 ></input>
                 <button
                 className="btnContainer"

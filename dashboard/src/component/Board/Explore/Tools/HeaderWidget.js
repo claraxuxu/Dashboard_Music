@@ -9,13 +9,13 @@ export default function HeaderWidget(props) {
 	return (
 		<div className="explore-inner">
 			{props.i.feature === "song_rank" ?
-				<h3 className="explore-title">Best song - {props.i.params}</h3>
+				<h3 className="explore-title">Song rank - {props.i.params}</h3>
 			: props.i.feature === "artist_stats" ?
 				<h3 className="explore-title">Artist Info - {props.i.params}</h3>
 			: props.i.feature === "newest_release" ?
 				<h3 className="explore-title">Newest - {props.i.params}</h3>
 			:
-				<h3 className="explore-title">Song Rank - {props.i.params}</h3>
+				<h3 className="explore-title">Best song - {props.i.params}</h3>
 			}
 			<img
 				className="minus-btn"

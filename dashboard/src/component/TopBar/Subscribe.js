@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import OtherLogin from './OtherLogin';
 import './TopBar.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './../Api';
+import OtherSignup from './OtherSignup';
 
 export default function Subscribe(props) {
     const [userName, setUsername] = useState("")
@@ -28,7 +28,7 @@ export default function Subscribe(props) {
 
     return (
         <div className="loginContainer">
-            <OtherLogin />
+            <OtherSignup setTrigger={props.setTrigger}/>
             <p style={{textAlign:'center', margin:0, padding:0}}>-- or --</p>
             <div>
                 <label style={{textAlign:'left'}}>Username</label>
@@ -42,6 +42,7 @@ export default function Subscribe(props) {
                 <input
                     value={pwd}
                     onChange={e => setPwd(e.target.value)}
+                    type="password"
                 ></input>
                 <button 
                 onClick={subscribe}

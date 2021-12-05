@@ -31,12 +31,14 @@ export default function SideBar() {
                             Discovery
                         </li>
                         </Link>
-                        <Link to="/profile" className="link"> 
-                        <li className="sidebarListItem">
-                            <img src={profileIcon} alt="Profile" className="sidebarIcon" />
-                            Profile
-                        </li>
-                        </Link>
+                        {global.in ? 
+                            <Link to="/profile" className="link"> 
+                            <li className="sidebarListItem">
+                                <img src={profileIcon} alt="Profile" className="sidebarIcon" />
+                                Profile
+                            </li>
+                            </Link>
+                        : null}
                     </ul>
                 </div>
             </div>
