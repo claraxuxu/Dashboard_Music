@@ -6,8 +6,8 @@ global.Services = [
 
 global.Feature = [
     {value: 'newest_release', label: 'Newest'},
-    {value: 'song_rank', label: 'Best'},
-    {value: 'best_songs', label: 'Rank'},
+    {value: 'best_songs', label: 'Best'},
+    {value: 'song_rank', label: 'Rank'},
     {value: 'artist_stats', label: 'Infos'},
 ]
 

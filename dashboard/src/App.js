@@ -10,6 +10,7 @@ import SideBar from './component/SideBar/SideBar';
 import Board from './component/Board/Board';
 import Profile from './component/Profile/Profile';
 import Discovery from './component/Discovery/Discovery';
+import Help from './component/Help/Help';
 
 function App() {
   const [Widget, setWidget] = useState();
@@ -22,6 +23,9 @@ function App() {
             <Switch>
               <Route exact path="/">
                 <Board w={Widget} setW={setWidget}/>
+              </Route>
+              <Route exact path="/help">
+                <Help />
               </Route>
               <Route path="/discovery">
                 <Discovery />

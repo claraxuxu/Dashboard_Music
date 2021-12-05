@@ -123,6 +123,8 @@
     height: 100px;
     overflow-y: scroll;
     white-space: nowrap;
+    border-bottom: #7A58E7;
+    border-bottom-style: double;
 }
 
 .rank-box {
@@ -143,4 +145,27 @@
     padding: 0;
     margin-bottom: 2px;
     white-space: pre-line;
+}
+
+.textinfo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.Info_Title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    margin-right: 3px;
+}
+
+.Info_Detail {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
 }

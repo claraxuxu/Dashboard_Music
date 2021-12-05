@@ -3,6 +3,15 @@ import './../../Board.css';
 import './../Explore.css';
 import './../../../config';
 
+function TextInfo(props) {
+    return (
+        <div className="textinfo-container">
+            <p className="Info_Title">{props.title}</p>
+            <p className="Info_Detail">{props.detail}</p>
+        </div>
+    );
+}
+
 export default function Deezer(props) {
     const [para, setPara] = useState("");
 
@@ -29,9 +38,9 @@ export default function Deezer(props) {
                         className="Album-img"
                     />
                     <div className="Infos_deezer">
-                        <p className="Infos_Detail">Service: Deezer</p>
-                        <p className="Infos_Detail">Artiste: {props.i.params}</p>
-                        <p className="Infos_Detail">Release date: {props.d}</p>
+                        <TextInfo title="Service:" detail="Deezer" />
+                        <TextInfo title="Artiste:" detail={props.i.params} />
+                        <TextInfo title="Release date:" detail={props.d} />
                     </div>
                 </div>
             : props.i.feature === 'song_rank' ? 
@@ -42,20 +51,24 @@ export default function Deezer(props) {
                             className="Album-img"
                         />
                         <div className="Infos_deezer">
-                            <p className="Infos_Detail">Service: Deezer</p>
-                            <p className="Infos_Detail">Artiste: {props.i.params}</p>
+                            <TextInfo title="Service:" detail="Deezer" />
+                            <TextInfo title="Artiste:" detail={props.i.params} />
+                            <TextInfo title="Rank:" detail={props.i.data.rank} />
                         </div>
                 </div>
             : props.i.feature === 'best_songs' ?
-                <div className="scroll-box">
-                    {props.i.data.map((item, index) => {
-                        return (
-                            <div className="rank-box">
-                                <p className="rank-i">{index}</p>
-                                <p className="rank-t">{item.title}</p>
-                            </div>
-                        )
-                    })}
+                <div>
+                    <div className="scroll-box">
+                        {props.i.data.map((item, index) => {
+                            return (
+                                <div className="rank-box">
+                                    <p className="rank-i">{index + 1}</p>
+                                    <p className="rank-t">{item.title}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <TextInfo title="Service:" detail="Deezer" />
                 </div>
             :
                 <div className="Info-box">
@@ -65,8 +78,9 @@ export default function Deezer(props) {
                         className="Album-img"
                     />
                     <div className="Infos_deezer">
-                        <p className="Infos_Detail">Album: {props.i.data.nb_album}</p>
-                        <p className="Infos_Detail">Fans: {props.i.data.nb_fan}</p>
+                        <TextInfo title="Service:" detail="Deezer" />
+                        <TextInfo title="Album:" detail={props.i.data.nb_album} />
+                        <TextInfo title="Fans:" detail={props.i.data.nb_fan} />
                     </div>
                 </div>
             }
