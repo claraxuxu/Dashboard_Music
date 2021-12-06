@@ -2,15 +2,7 @@ import React, { useState } from 'react';
 import './../../Board.css';
 import './../Explore.css';
 import './../../../config';
-
-function TextInfo(props) {
-    return (
-        <div className="textinfo-container">
-            <p className="Info_Title">{props.title}</p>
-            <p className="Info_Detail">{props.detail}</p>
-        </div>
-    );
-}
+import TextInfo from './../Tools/TextInfo';
 
 export default function Deezer(props) {
     const [para, setPara] = useState("");
@@ -52,7 +44,7 @@ export default function Deezer(props) {
                         />
                         <div className="Infos_deezer">
                             <TextInfo title="Service:" detail="Deezer" />
-                            <TextInfo title="Artiste:" detail={props.i.params} />
+                            <TextInfo title="Album:" detail={props.i.data.title} />
                             <TextInfo title="Rank:" detail={props.i.data.rank} />
                         </div>
                 </div>

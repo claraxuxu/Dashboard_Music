@@ -44,7 +44,7 @@ export default function PopupW(props) {
                                 />
                             </div>
                         }
-                        <label className="labels">Signer</label>
+                        <label className="labels">Singer</label>
                         <input
                             value={params}
                             onChange={e => setP(e.target.value)}

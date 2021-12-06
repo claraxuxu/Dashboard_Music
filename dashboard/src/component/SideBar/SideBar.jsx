@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './SideBar.css';
-import HomeIcon from './../../assets/home.png';
 import profileIcon from './../../assets/profile.png';
 import MyIcon from './../../assets/myboard.png';
+import HelpIcon from './../../assets/help.png';
 
 export default function SideBar() {
     return (
@@ -23,7 +23,7 @@ export default function SideBar() {
                     <ul className="sidebarList">
                         <Link to="/help" className="link">
                         <li className="sidebarListItem">
-                            <img src={HomeIcon} alt="spotify" className="sidebarIcon" />
+                            <img src={HelpIcon} alt="spotify" className="sidebarIcon" />
                             Help
                         </li>
                         </Link>

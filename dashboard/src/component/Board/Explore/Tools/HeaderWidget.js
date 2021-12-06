@@ -15,7 +15,7 @@ export default function HeaderWidget(props) {
 			: props.i.feature === "newest_release" ?
 				<h3 className="explore-title">Newest - {props.i.params}</h3>
 			:
-				<h3 className="explore-title">Best song - {props.i.params}</h3>
+				<h3 className="explore-title">Best songs - {props.i.params}</h3>
 			}
 			<img
 				className="minus-btn"
